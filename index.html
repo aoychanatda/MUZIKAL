@@ -22,35 +22,71 @@
   <body>
     <center><h1>MUZIKAL</h1></center>
 
-<!--Sign in-->
+<!--Button Sign in & Sign Up-->
 <p align="right">
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SignIn">
   Sign in
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SignUp">
+  Sign Up
 </button></p>
+
 <!-- Modal Sign in -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="SignIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+        <div class="text-center"><h4 class="modal-title" id="myModalLabel">Sign in</h4></div>
       </div>
       <div class="modal-body">
         <form name="singIn" method="post" action="">
-            Username : <input type="text" name="username"><br>
-            Password : <input type="password" name="password">
-          
+            Username: <input type="text" name="username"><br><br>
+            Password: <input type="password" name="password"><br><br>
+          <center><button type="submit" class="btn btn-primary">Sign in</button></center>
         
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-      </div>
+      <div  class="text-center">
+        
+        Not a member?<br>
+        <a href="#" data-toggle="modal" data-target="#SignUp" data-dismiss="modal">Sign up</a>
+      </div></div>
       </form>
     </div>
   </div>
 </div>
 
 <!--End Sing in-->
+
+<!--SignUp-->
+<div class="modal fade" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="text-center"><h4 class="modal-title" id="myModalLabel">Sign Up</h4></div>
+      </div>
+      <div class="modal-body">
+        <form name="singIn" method="post" action="">
+            <i>*Username</i><br> <input type="text" name="username" size="30"><br><br>
+            <i>*Password</i><br> <input type="password" name="password" size="30"><br><br>
+            <i>*First Name</i><br> <input type="text" name="fname" size="30"><br><br>
+            <i>*Last Name</i><br> <input type="text" name="lname" size="30"><br><br>
+            <i>*Email</i><br> <input type="text" name="email" size="30"><br><br>
+            <i>Phone</i><br> <input type="text" name="email" size="30"><br><br>
+          
+      </form>
+      </div>
+      <div class="modal-footer">
+      <div  class="text-center">
+        <button type="submit" class="btn btn-primary">Sign Up</button><br>
+        
+      </div></div>
+    </div>
+  </div>
+</div>
+<!--end-->
 
 <!-- Start Slide-->
 

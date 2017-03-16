@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,16 +21,24 @@
 
   </head>
   <body>
-    <center><h1>MUZIKAL</h1></center>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">MUZIKAL</a></div>
+    <form class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Concerts">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
 
-<!--Button Sign in & Sign Up-->
-<p align="right">
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SignIn">
-  Sign in
-</button>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#SignUp">
-  Sign Up
-</button></p>
+    <!--Button Sign in & Sign Up-->
+    <ul class="nav navbar-nav navbar-right">
+      <!--Button Sign in & Sign Up-->
+    <p align="right">
+    <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#SignIn"> Sign in </button>
+    <button type="button" class="btn btn-primary btn-" data-toggle="modal" data-target="#SignUp"> Sign Up </button></p></ul>
+  </div>
+</nav>
 
 <!-- Modal Sign in -->
 <div class="modal fade" id="SignIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -168,9 +177,6 @@
 </div>
 
 <!-- End product -->
-
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

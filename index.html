@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,17 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>MUZIKAL</title>
+    <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Prompt:100|Roboto" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Roboto','Prompt', serif;
-        font-size: 14px;
-      }
-    </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,28 +20,17 @@
 
   </head>
   <body>
-<!--Nav BAR-->
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid"><br>
+  <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">MUZIKAL</a></div>
+    
 
     <!--Button Sign in & Sign Up-->
     <ul class="nav navbar-nav navbar-right">
+      <!--Button Sign in & Sign Up-->
     <p align="right">
     <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#SignIn"> Sign in </button>
-    <button type="button" class="btn btn-primary btn-" data-toggle="modal" data-target="#SignUp"> Sign Up</button>&nbsp; &nbsp;</p></ul>
-
-    <!--SEARCH-->
-    <form class="navbar-form navbar-left">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search Concerts">
-      </div>
-      <button type="submit" class="btn btn-default">Search</button>
-    </form>
-  
-   <!--Logo-->
-    <center>><font style='font-family:Prompt; font-size:400%; color:white; margin: 0% 150% 0% 20%;'>MUZIKAL</font></center>
-
-  
+    <button type="button" class="btn btn-primary btn-" data-toggle="modal" data-target="#SignUp"> Sign Up </button></p></ul>
   </div>
 </nav>
 
@@ -59,12 +40,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="text-center"><h2 class="modal-title" id="myModalLabel">Sign in</h2></div>
+        <div class="text-center"><h4 class="modal-title" id="myModalLabel">Sign in</h4></div>
       </div>
       <div class="modal-body">
         <form name="singIn" method="post" action="">
-            <center>Username: <input type="text" name="username"></center><br>
-            <center>Password: <input type="password" name="password"></center><br><br>
+            Username: <input type="text" name="username"><br><br>
+            Password: <input type="password" name="password"><br><br>
           <center><button type="submit" class="btn btn-primary">Sign in</button></center>
         </form>
       </div>
@@ -79,7 +60,7 @@
   </div>
 </div>
 
-<!--End Sign in-->
+<!--End Sing in-->
 
 <!--SignUp-->
 <div class="modal fade" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
@@ -87,11 +68,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="text-center"><h2 class="modal-title" id="myModalLabel">Sign Up</h2></div>
+        <div class="text-center"><h4 class="modal-title" id="myModalLabel">Sign Up</h4></div>
       </div>
       <div class="modal-body">
         <form name="singIn" method="post" action="">
-            &nbsp;<i>*Username</i><br> <input type="text" name="username" size="30"><br><br>
+            <i>*Username</i><br> <input type="text" name="username" size="30"><br><br>
             <i>*Password</i><br> <input type="password" name="password" size="30"><br><br>
             <i>*First Name</i><br> <input type="text" name="fname" size="30"><br><br>
             <i>*Last Name</i><br> <input type="text" name="lname" size="30"><br><br>
@@ -100,19 +81,19 @@
             </form>
       </div>
       <div class="modal-footer">
-      <div  class="text-center">
-        <button type="submit" class="btn btn-primary">Sign Up</button><br>
-        
-      </div></div>
-      
+        <div  class="text-center">
+          <button type="submit" class="btn btn-primary">Sign Up</button><br>
+        </div>
+      </div> 
     </div>
   </div>
 </div>
-<!--end-->
+<!--End Sing in-->
+
 
 <!-- Start Slide-->
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 100%; margin: 0 auto">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="width: 70%; margin: 0 auto">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -151,7 +132,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <!-- End Slide-->
 
 <hr size="10" width="75%">
@@ -159,39 +139,44 @@
 <!-- Start product-->
 <div class="container">
   <div class="row" style="width: 80%; margin: 0 auto">
-     
-       <div class="col-xs-12 col-sm-6 col-md-4">        
-        <a href="#" class="thumbnail">
-          <img src="img/test4.JPG" class="img-responsive">
-          <div class="text"><center><h4>Concert1</h4></center></div>
-          <div class="text"><center><h5>...........</h5></center></div>
-          <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-        </a>        
+      <div class="col-xs-12 col-sm-6 col-md-4">        
+    <a href="#" class="thumbnail">
+        <img src="img/test4.JPG">
+        <div class="text-center" style="padding-top:10px;">123</div>
+            <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >      View Detail      </button></div>
+          </a>     
+         
       </div>
          
-      <div class="col-xs-12 col-sm-6 col-md-4">    
-        <a href="#" class="thumbnail">
-          <img src="img/test2.JPG" class="img-responsive">
-          <div class="text"><center><h4>Concert2</h4></center></div>
-          <div class="text"><center><h5>...........</h5></center></div>
-          <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-        </a>
-      </div>
+        
+        <div class="col-xs-12 col-sm-6 col-md-4">    
+            <a href="#" class="thumbnail">
+              <img src="img/test2.JPG" class="img-responsive">
+                <div class="text-center" style="padding-top:10px;">123</div>
+                  <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >      View Detail      </button></div>
+            </a>
+        </div>
       
         
-      <div class="col-xs-12 col-sm-6 col-md-4">    
-        <a href="#" class="thumbnail">
-          <img src="img/test3.JPG" class="img-responsive">
-          <div class="text"><center><h4>Concert3</h4></center></div>
-          <div class="text"><center><h5>...........</h5></center></div>
-          <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-        </a>
-      </div>
-   
-<!-- VIEW ALL -->
-<p align = "center"><button type="button" class="btn btn-link"><a href="AllConcerts.html">VIEW ALL</a></button></p><br>
+        <div class="col-xs-12 col-sm-6 col-md-4">    
+            <a href="#" class="thumbnail">
+              <img src="img/test3.JPG" class="img-responsive">
+                <div class="text-center" style="padding-top:10px;">123</div>
+                  <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >      View Detail      </button></div>
+            </a>
+        </div>
+    
+  </div>        
+</div>
+<!-- End product -->
 
-      <!-- Footer -->
+<!--What is Muzikal-->
+  <p align="center">
+    <a href="#"><button type="button" class="btn btn-link">What is MUZIKAL</button></a>
+  </p>
+<!-- End what is muzikal-->
+
+<!-- Footer -->
       <footer style="background-color:rgba(255,255,255,0.1);">
         <div class="row">
          <div class="container ">
@@ -213,8 +198,9 @@
             </span>
             GitHub</a><br><br>
          </div>
-      </footer>    
-<!-- End product -->
+      </footer>
+<!--End footer -->
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

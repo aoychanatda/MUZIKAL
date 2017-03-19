@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!--NAV BAR -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="index.html"><img src="img/bulma-logo.png" alt="Cinque Terre" width="220" height="40"></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+
+                <!-- ORGANIZER Dropdown right-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Sign Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!--LEFT MENU-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav"><br>
+
+                    <!--Dashboard(Dropdown)-->
+                    <li class="active">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
+                        <ul id="demo" class="collapse">
+                            <li><a href="index.html">Dashboard Overview</a></li>
+                            <li><a href="Dashboard concert.html">Concert1</a></li>
+                            <li><a href="Dashboard concert.html">Concert2</a></li>
+                        </ul>
+                    </li>
+
+                    <!--Forms-->
+                    <li><a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a></li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <!--___________________________________________CONTENT___________________________________________-->
+       
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Concert Request Form
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard Overview</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Concert Request Form
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label>* Organizer name</label>
+                                <input class="form-control" placeholder="Company name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>* Contact name</label>
+                                <input class="form-control" placeholder="Napong Tansakul">
+                            </div>
+
+                            <div class="form-group">
+                                <label>* Size of Concert</label>
+                                <select class="form-control">
+                                    <option>100 - 500 people</option>
+                                    <option>501 - 1000 people</option>
+                                    <option>1001 - 1500 people</option>
+                                    <option>1501 - 2000 people</option>
+                                    <option>2001 - 2500 people</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>* Concert Type</label>&nbsp; &nbsp;
+                                <label class="radio-inline">
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>Paid
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">Free
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label>* E-mail</label>
+                                <input class="form-control" placeholder="napong@gmail.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>* Phone</label>
+                                <input class="form-control" placeholder="086-369-4112">
+                            </div>
+
+                            <div class="form-group">
+                                <label>* Ticket average price(Thai Bath)</label>
+                                <input class="form-control" placeholder="850 Bath">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label>Text area</label>
+                                <textarea class="form-control" rows="5"></textarea>
+                            </div>
+                            
+                            <center><button type="submit" class="btn btn-danger">Send Request</button></center><br><br>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

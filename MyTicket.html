@@ -20,6 +20,7 @@
     <link href="js/jquery-3.1.1.min.js" rel="stylesheet">
     
   </head>
+
 <body class="colorful3">
 <nav class="navbar navbar-custom navbar-fixed-top">
   <div class="container-fluid">
@@ -48,201 +49,231 @@
     </div>
 </nav>
 
+<!--______________________________________________________________CONTENT__________________________________________________________________-->
+
+<center><h1>MY TICKET</h1></center>
+
+ <br>
+
+
 <div class="container">
   <div class="thumbnail" style="width: 70%; margin: 0 auto">
-  <br><br><center><h2>Ticket</h2></center><br><br>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#refund">Ticket Refund</a></li>
+        <li><a data-toggle="tab" href="#menu1">E-Ticket</a></li>
+        <li><a data-toggle="tab" href="#menu2">History</a></li>
+      </ul>
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#refund">Ticket Refund</a></li>
-    <li><a data-toggle="tab" href="#menu1">E-Ticket</a></li>
-    <li><a data-toggle="tab" href="#menu2">History</a></li>
-  </ul>
-<!--Start Bar-->
-  <div class="tab-content">
-    <!-- Start Ticket Refund -->
-    <div id="refund" class="tab-pane fade in active">
-      <div class="container">
-        <div class="row" style="width: 80%; margin: 0 auto">
-          <div class="col-xs-12 col-sm-6 col-md-4">        
-            <div class="thumbnail">
-              <img src="img/test4.JPG" class="img-responsive">
-              <div class="text"><center><h4>Dek Sai Silp #Bangkok</h4></center></div>
-                <div class="text"><h5>Date : 24 May 2016</h5></div>
-                  <div class="text"><h5>Time : 17:00</h5></div>
-                    <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#chooseSeat" data-dismiss="modal">Get a Refund</button></div>
-            </div>        
-          </div>
-        </div>        
-      </div>
-    <!--Modal choose seat-->
-    <div class="modal fade" id="chooseSeat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
-      <div class="modal-dialog" role="document" style="width: 30%; margin: 0 auto">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div class="text-center">
-              <h4 class="modal-title" id="myModalLabel">Check seat</h4>
-            </div>
-          </div>
-          <div class="modal-body">
-            <form name="checkSeat" method="post" action="">
-            <div class="checkbox">
-                <label><input type="checkbox" value="">A1</label><br><br>
-                <label><input type="checkbox" value="">A2</label><br><br>
-                <label><input type="checkbox" value="">A3</label><br><br>
+  <!--Start Bar-->
+    <div class="tab-content"><br>
+
+            <!--_____________________TICKER REFUND___________________-->
+            <!-- Start Ticket Refund -->
+            <div id="refund" class="tab-pane fade in active">
+
+            <!--CARD-->    
+              <div class="container">
+                <div class="row" style="width: 100%; margin: 0 auto">
+                  <div class="col-xs-12 col-sm-6 col-md-4">        
+                    <div class="thumbnail">
+                        <img src="https://static1.squarespace.com/static/54a6e652e4b00f7c5fb09e89/t/580f9acaf7e0abd1f4b0c0dd/1477417686480/RobertEllis_EuroTour_V3_Thumb.jpg?format=500w" class="img-responsive">
+                        <center><h3><b>ConcertName1</b></h3></center>
+                        <font size=2>
+                          <a href="#"><span class="glyphicon glyphicon-time"></span></a>&nbsp;  15 April 2017 | 17:00<br>
+                          <a href="#"><span class="glyphicon glyphicon-map-marker"></span></a>&nbsp; OASIS ARENA @SHOW DC / RAMA9 <br><br>
+                        </font>
+      
+                        <div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#chooseSeat" data-dismiss="modal">Get a Refund</button></div>
+                    </div>        
+                  </div>
+                </div>        
               </div>
-              <center><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Accept" data-dismiss="modal">Confirm</button></center>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-   <!-- Start ticket refund accept-->
-    <div class="modal fade" id="Accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document" style="width: 50%; margin: 0 auto">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <div class="text-center"><h4 class="modal-title" id="myModalLabel">Ticket Refund</h4></div>
-          </div>
-        <div class="modal-body">
-          <form name="checkSeat" method="post" action="">
-            <div class="detail">
-              <p>
-                สปา ริคเตอร์ เพทนาการสเปคกิฟท์อพาร์ตเมนท์ ควิกดีพาร์ตเมนต์ เวิลด์ทัวร์แอร์ ไฟลท์เทรนด์บ๊อกซ์ พงษ์พันธุวิศวกรรม สไปเดอร์โอ้ยซัพพลายเอฟเฟ็กต์ มาร์เก็ตตู้เซฟเชอร์รี่ เนอะแมนชั่นแล็บอุด้งมอบตัว สตาร์ นรีแพทย์โบกี้จตุคามธรรมาภิบาล บริกรควิก อีโรติกเซอร์ไพรส์อพาร์ตเมนต์มอยส์เจอไรเซอร์เบอร์รี แอร์โอเลี้ยงติ๋ม แพลนบัลลาสต์แพทยสภา
 
-                ยิมหลินจือ ฟรุตเพาเวอร์﻿กรรมาชนปาร์ตี้ ชะโนดคอร์ปอเรชั่นแชมปิยอง สตีลตัวเองสคริปต์ แฟร์มายองเนสราสเบอร์รีรามเทพ แอปเปิ้ล ฮ็อตอัลตราหมั่นโถวแฟรี่โพสต์ ต่อรองพันธกิจ ไลน์ทัวร์แครกเกอร์เชฟแอ๊บแบ๊ว ป๋าพงษ์เพียวทัวริสต์วโรกาส ปัจฉิมนิเทศอพาร์ตเมนท์ปาสเตอร์แฟรี รามเทพอัลบั้มโอวัลติน เฟิร์มปาสคาล บริกรบลูเบอร์รีเยอร์บีราโพสต์ สมิติเวชไฟลท์ แอดมิชชั่นรามาธิบดีซีดานบูติกติงต๊อง
-
-                โดนัทออเดอร์ธรรมาภิบาลเพียวต่อยอด มาร์เก็ตติ้ง วิป ตุ๊ดเซ็นเซอร์ ซิงสารขัณฑ์ทัวริสต์สหรัฐ ตุ๊กตุ๊ก หมายปองโอเปอเรเตอร์ พุทธภูมิพิซซ่า เกรดตี๋ รีดไถชัตเตอร์ช็อคชาร์ป กษัตริยาธิราชสปิริต ดีพาร์ตเมนท์สปิริต คาราโอเกะเยลลี่ ต่อยอดละอ่อนโฟล์คพันธกิจอึ๋ม หลวงตาอยุติธรรมวิกสเต็ป ดีพาร์ตเมนต์ลิสต์อพาร์ตเมนท์แซ็กสามช่า
-
-                ม็อบเป็นไงเจี๊ยวอพาร์ทเมนท์ แฟรนไชส์มวลชนซาร์แกสโซฮอล์เก๋ากี้ บอร์ดบลูเบอร์รีเลกเชอร์ดีไซน์ โมเต็ลเฉิ่มรามาธิบดีอุปัทวเหตุคอร์รัปชัน เวิลด์ เวิร์กเฟอร์รี่กรอบรูป เหี่ยวย่น     ฮัลโลวีนม้งเกมส์ เจ๊ไลน์สแตนเลสสติ๊กเกอร์ ซิมโฟนี่วานิลากิมจิเฮอร์ริเคน ไวอากร้าโอเลี้ยงคัตเอาต์สวีทอพาร์ตเมนต์ ฮากกาเย้วอินดอร์ แชมปิยองโลโก้อุปทาน สหรัฐว้อดก้าแอ็คชั่นกรุ๊ปพาสปอร์ต อุเทนโหลยโท่ยโมเต็ล แอ๊บแบ๊วจอหงวนอีแต๋นแฟร์
-
-                ทีวีเซ่นไหว้สหัสวรรษ รายชื่อ เลดี้คอมเพล็กซ์ ไบโอ โรลออนบอมบ์ เซอร์ไพรส์ ออสซี่ฟรุตเบนโลราชบัณฑิตยสถานสันทนาการ ซีรีส์สตูดิโอ ดีกรีแบ็กโฮอิเลียดภารตะ ด็อกเตอร์เซ็กซ์ปิยมิตรออร์แกนิกแอลมอนด์ รามเทพโฮมจอหงวนคอมเมนต์ อันตรกิริยาซ้อ เตี๊ยมแชมเปญ ชะโนด ยูโรบูมล้มเหลว สปิริต
-              </p><br><br>
-            </div>
-            <center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Confirm" data-dismiss="modal">Accept</button></center>
-            </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Start Confirm refund-->
-      <div class="modal fade" id="Confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document" style="width: 50%; margin: 0 auto">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <div class="text-center"><h4 class="modal-title" id="myModalLabel">Ticket Refund</h4></div>
-            </div>
-            <div class="modal-body">
-              <form name="checkSeat" method="post" action="">
-                <div class="detail">
-                <!-- Start Table Order-->
-                  <div>
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>ประเภทบัตร</th>
-                        <th>ราคา</th>
-                        <th>จำนวน</th>
-                        <th>รวม</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <td scope="row">Pre sale</td>
-                        <td>590</td>
-                        <td>1</td>
-                        <td>590</td>
-                      </tbody>
-                    <tbody>
-                        <td scope="row">Service Charge 7%</td>
-                        <td>26</td>
-                        <td>1</td>
-                        <td>26</td>
-                    </tbody>              
-                    <tbody>
-                        <td scope="row">ราคารวม</td>
-                        <td></td>
-                        <td></td>
-                        <td>616</td>
-                    </tbody> 
-                  </table>
-              </div>           
-              <!-- End Table Order -->          
-              </div>
-              <center><button type="submit" class="btn btn-primary">Confirm</button></center>
-              </form>
+            <!--Modal choose seat-->
+            <div class="modal fade" id="chooseSeat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+              <div class="modal-dialog" role="document" style="width: 30%; margin: 0 auto">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="text-center">
+                      <h4 class="modal-title" id="myModalLabel">Check seat</h4>
+                    </div>
+                  </div>
+                  <div class="modal-body">
+                    <form name="checkSeat" method="post" action="">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">A1</label><br><br>
+                        <label><input type="checkbox" value="">A2</label><br><br>
+                        <label><input type="checkbox" value="">A3</label><br><br>
+                      </div>
+                      <center><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Accept" data-dismiss="modal">Confirm</button></center>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    <!-- End Ticket Refund--> 
+           <!-- Start ticket refund accept-->
+            <div class="modal fade" id="Accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document" style="width: 50%; margin: 0 auto">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <div class="text-center"><h4 class="modal-title" id="myModalLabel">Ticket Refund</h4></div>
+                  </div>
+                <div class="modal-body">
+                  <form name="checkSeat" method="post" action="">
+                    <div class="detail">
+                      <p>
+                        สปา ริคเตอร์ เพทนาการสเปคกิฟท์อพาร์ตเมนท์ ควิกดีพาร์ตเมนต์ เวิลด์ทัวร์แอร์ ไฟลท์เทรนด์บ๊อกซ์ พงษ์พันธุวิศวกรรม สไปเดอร์โอ้ยซัพพลายเอฟเฟ็กต์ มาร์เก็ตตู้เซฟเชอร์รี่ เนอะแมนชั่นแล็บอุด้งมอบตัว สตาร์ นรีแพทย์โบกี้จตุคามธรรมาภิบาล บริกรควิก อีโรติกเซอร์ไพรส์อพาร์ตเมนต์มอยส์เจอไรเซอร์เบอร์รี แอร์โอเลี้ยงติ๋ม แพลนบัลลาสต์แพทยสภา
 
-    <!-- Start E-Ticket -->
-    <div id="menu1" class="tab-pane fade">
-      <div class="container">
-        <div class="row" style="width: 200%; margin: 0 auto">
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="panel panel-info">
-              <div class="panel-body">
-                <div class="row" >
+                        ยิมหลินจือ ฟรุตเพาเวอร์﻿กรรมาชนปาร์ตี้ ชะโนดคอร์ปอเรชั่นแชมปิยอง สตีลตัวเองสคริปต์ แฟร์มายองเนสราสเบอร์รีรามเทพ แอปเปิ้ล ฮ็อตอัลตราหมั่นโถวแฟรี่โพสต์ ต่อรองพันธกิจ ไลน์ทัวร์แครกเกอร์เชฟแอ๊บแบ๊ว ป๋าพงษ์เพียวทัวริสต์วโรกาส ปัจฉิมนิเทศอพาร์ตเมนท์ปาสเตอร์แฟรี รามเทพอัลบั้มโอวัลติน เฟิร์มปาสคาล บริกรบลูเบอร์รีเยอร์บีราโพสต์ สมิติเวชไฟลท์ แอดมิชชั่นรามาธิบดีซีดานบูติกติงต๊อง
+
+                        โดนัทออเดอร์ธรรมาภิบาลเพียวต่อยอด มาร์เก็ตติ้ง วิป ตุ๊ดเซ็นเซอร์ ซิงสารขัณฑ์ทัวริสต์สหรัฐ ตุ๊กตุ๊ก หมายปองโอเปอเรเตอร์ พุทธภูมิพิซซ่า เกรดตี๋ รีดไถชัตเตอร์ช็อคชาร์ป กษัตริยาธิราชสปิริต ดีพาร์ตเมนท์สปิริต คาราโอเกะเยลลี่ ต่อยอดละอ่อนโฟล์คพันธกิจอึ๋ม หลวงตาอยุติธรรมวิกสเต็ป ดีพาร์ตเมนต์ลิสต์อพาร์ตเมนท์แซ็กสามช่า
+
+                        ม็อบเป็นไงเจี๊ยวอพาร์ทเมนท์ แฟรนไชส์มวลชนซาร์แกสโซฮอล์เก๋ากี้ บอร์ดบลูเบอร์รีเลกเชอร์ดีไซน์ โมเต็ลเฉิ่มรามาธิบดีอุปัทวเหตุคอร์รัปชัน เวิลด์ เวิร์กเฟอร์รี่กรอบรูป เหี่ยวย่น     ฮัลโลวีนม้งเกมส์ เจ๊ไลน์สแตนเลสสติ๊กเกอร์ ซิมโฟนี่วานิลากิมจิเฮอร์ริเคน ไวอากร้าโอเลี้ยงคัตเอาต์สวีทอพาร์ตเมนต์ ฮากกาเย้วอินดอร์ แชมปิยองโลโก้อุปทาน สหรัฐว้อดก้าแอ็คชั่นกรุ๊ปพาสปอร์ต อุเทนโหลยโท่ยโมเต็ล แอ๊บแบ๊วจอหงวนอีแต๋นแฟร์
+
+                        ทีวีเซ่นไหว้สหัสวรรษ รายชื่อ เลดี้คอมเพล็กซ์ ไบโอ โรลออนบอมบ์ เซอร์ไพรส์ ออสซี่ฟรุตเบนโลราชบัณฑิตยสถานสันทนาการ ซีรีส์สตูดิโอ ดีกรีแบ็กโฮอิเลียดภารตะ ด็อกเตอร์เซ็กซ์ปิยมิตรออร์แกนิกแอลมอนด์ รามเทพโฮมจอหงวนคอมเมนต์ อันตรกิริยาซ้อ เตี๊ยมแชมเปญ ชะโนด ยูโรบูมล้มเหลว สปิริต
+                      </p><br><br>
+                    </div>
+                    <center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#Confirm" data-dismiss="modal">Accept</button></center>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Start Confirm refund-->
+              <div class="modal fade" id="Confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document" style="width: 50%; margin: 0 auto">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <div class="text-center"><h4 class="modal-title" id="myModalLabel">Ticket Refund</h4></div>
+                    </div>
+                    <div class="modal-body">
+                      <form name="checkSeat" method="post" action="">
+                        <div class="detail">
+                        <!-- Start Table Order-->
+                          <div>
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>ประเภทบัตร</th>
+                                <th>ราคา</th>
+                                <th>จำนวน</th>
+                                <th>รวม</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <td scope="row">Pre sale</td>
+                                <td>590</td>
+                                <td>1</td>
+                                <td>590</td>
+                              </tbody>
+                            <tbody>
+                                <td scope="row">Service Charge 7%</td>
+                                <td>26</td>
+                                <td>1</td>
+                                <td>26</td>
+                            </tbody>              
+                            <tbody>
+                                <td scope="row">ราคารวม</td>
+                                <td></td>
+                                <td></td>
+                                <td>616</td>
+                            </tbody> 
+                          </table>
+                      </div>           
+                      <!-- End Table Order -->          
+                      </div>
+                      <center><button type="submit" class="btn btn-primary">Confirm</button></center>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- End Ticket Refund--> 
 
 
-                    <!--____________________E-TICKET____________________-->
-                    <!--card1-->
-                    <div class="col-lg-12">
-                        <div class="panel panel-info" >
-                            <div class="panel-body">
-                                <div class="row">
+      <!-- Start E-Ticket -->
+      <div id="menu1" class="tab-pane fade">
+        <div class="container">
+          <div class="row" style="width: 200%; margin: 0 auto">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+           
+                <div class="panel-body">
+                  <div class="row" >
 
-                                    <div class="col-lg-4">
-                                        <div class="col-lg-4" align="left"><img src="https://static1.squarespace.com/static/54a6e652e4b00f7c5fb09e89/t/580f9acaf7e0abd1f4b0c0dd/1477417686480/RobertEllis_EuroTour_V3_Thumb.jpg?format=500w" style="width:200px;height:200px;">
-                                        </div>
+                      <!--____________________E-TICKET____________________-->
+
+                      <div class="panel panel-default class">
+                          <div class="panel-heading"><center><b>E-TICKET</b></center></div>
+                      </div>
+
+                      <!--card1-->
+                      <div class="col-lg-12">
+                          <div class="panel panel-info" >
+                              <div class="panel-body">
+                                  <div class="row">
+
+                                      <div class="col-lg-4">
+                                          <img src="https://static1.squarespace.com/static/54a6e652e4b00f7c5fb09e89/t/580f9acaf7e0abd1f4b0c0dd/1477417686480/RobertEllis_EuroTour_V3_Thumb.jpg?format=500w" class="img-responsive">
+                                      </div>
+                                      <div class="col-lg-4 text-left">
+                                          <h3><b>ConcertName2</b></h3>
+                                          <b><font size=2>
+                                              Advance<br>
+                                              1500.00 THB<br>
+                                               Napong Tansakul<br>
+                                               REF: D2L7GU
+                                          </font></b>
+                                          <br>
+                                          <font size=2>
+                                              <a href="#"><span class="glyphicon glyphicon-time"></span></a>&nbsp;  15 April 2017 | 17:00<br>
+                                              <a href="#"><span class="glyphicon glyphicon-map-marker"></span></a>&nbsp; OASIS ARENA @SHOW DC / RAMA9 <br>
+                                          </font>
+                                      </div>
+                                      <div class="col-lg-4">
+                                          <center><img src="https://www.fullidentity.com/wp-content/uploads/2015/10/qrcode.png" style="width:160px;height:160px;"></center><br>
+                                          <center><button type="button" class="btn btn-secondary btn-sm"style="width: 75%">PRINT</button></center>
+                                      </div>
                                     </div>
-                                    <div class="col-lg-4 text-left">
-                                        <h3><b>ConcertName2</b></h3>
-                                        <b><font size=2>
-                                            Advance<br>
-                                            1500.00 THB<br>
-                                             Napong Tansakul<br>
-                                             REF: D2L7GU
-                                        </font></b>
-                                        <br>
-                                        <font size=2>
-                                            <a href="#"><span class="glyphicon glyphicon-time"></span></a>&nbsp;  15 April 2017 | 17:00<br>
-                                            <a href="#"><span class="glyphicon glyphicon-map-marker"></span></a>&nbsp; OASIS ARENA @SHOW DC / RAMA9 <br>
-                                        </font>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <center><img src="https://www.fullidentity.com/wp-content/uploads/2015/10/qrcode.png" style="width:160px;height:160px;"></center><br>
-                                        <center><button type="button" class="btn btn-secondary btn-sm"style="width: 75%">PRINT</button></center>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- /.panel-body-->
+                              </div> <!-- /.panel-body-->
                           </div> <!-- /.panel panel-info-->
                       </div> <!-- /.End card1-->
-                    </div>
+
                   </div>
                 </div>
             </div>
           </div>
-    </div>
+        </div>
+      </div>
 
 
+      <!-- Start History -->
+      <div id="menu2" class="tab-pane fade">
+        <div class="container">
+          <div class="row" style="width: 200%; margin: 0 auto">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="panel-body">
+                  <div class="row ">
 
+                  <!--____________________________HISTORY___________________________-->
 
-    <!-- Start History -->
-    <div id="menu2" class="tab-pane fade">
-      <div class="col-lg-10">
-          <div class="panel panel-info" >
-              <div class="panel-body">
-                    <div class="row" >
-                        <div class="col-lg-6">
-                            <div class="col-lg-6" align="left"><img src="http://assets.gcstatic.com/u/apps/asset_manager/uploaded/2015/28/little-mix-the-get-weird-tour-2016-1437155664-custom-0.png" style="width:250px;height:250px;">
-                            </div>
-                        </div>
+                  <div class="panel panel-default class">
+                      <div class="panel-heading"><center><b>HISTORY</b></center></div>
+                  </div>
+
+                  <!--___Concert1 ___-->
+
+                  <div class="col-lg-12">
+                      <div class="panel panel-info" >
+                          <div class="panel-body">
+                                <div class="row" >
+
+                                    <div class="col-lg-6">
+                                        <div class="col-lg-6" align="left"><img src="http://assets.gcstatic.com/u/apps/asset_manager/uploaded/2015/28/little-mix-the-get-weird-tour-2016-1437155664-custom-0.png" style="width:280px;height:280px;"></div>
+                                    </div>
                                     <div class="col-lg-6 text-left">
                                         <h3><b>ConcertName1</b></h3><br>
                                         <a href="#"><span class="glyphicon glyphicon-time"></span></a>&nbsp; 28 July 2017 | 09:00<br>
@@ -254,80 +285,76 @@
                                         <button type="button" class="btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapse1">More Detail <i class="fa fa-angle-down" style="font-size:18px"></i></button>
                                     </div>
                                 </div>
-                                
+                                            
                                 <br>
 
                                 <div class="panel-group" id="accordion">
                                     <div class="panel panel-info">
-                                      <div id="collapse1" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <div class="col-lg-6 text-left">
-                                                <h5><b>Order #01369-451287</b></h5>
-                                                <h5><b>ConcertName1</b></h5><br>
-                                                Status: <button type="button" class="btn btn-success btn-sm">PAID</button><br><br>
-                                                Total Price: <b>฿4300.00</b><br>
-                                            </div>
-                                            <div class="col-lg-6 text-left">
-                                                <b>Buyer: </b>&nbsp; Napong Tansakul<br>
-                                                <b>Email: </b>&nbsp; napong@gmail.com<br>
-                                                <b>Phone: </b>&nbsp; +66891099877<br>
-                                                <b>Payment via: </b>&nbsp; Credit Card<br>
-                                                <b>Ordered At:</b> 02 March 2017 13:48<br><br>
-                                            </div>
-                                        
-
-                                        <!--TABLE-->
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <hr width=100%> <!--Horizontal rule-->
-                                                    <h5>&nbsp;&nbsp;&nbsp;  Order Details</h5>
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered table-hover">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th><center>Ticket Type</center></th>
-                                                                    <th><center>Price</center></th>
-                                                                    <th><center>Quantity</center></th>
-                                                                    <th><center>Subtotal</center></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr align="center">
-                                                                    <td>14 April - VIP</td>
-                                                                    <td>฿2800.00</td>
-                                                                    <td>1</td>
-                                                                    <td>2800.00</td>
-                                                                </tr>
-                                                                <tr align="center">
-                                                                    <td>14 April - Advance</td>
-                                                                    <td>฿1500.00</td>
-                                                                    <td>1</td>
-                                                                    <td>1500.00</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    Order total : &nbsp;<b>฿4300.00</b>
-                                                </div>    
-                                            </div>
+                                       <div id="collapse1" class="panel-collapse collapse">
+                                          <div class="panel-body">
+                                               <div class="col-lg-6 text-left">
+                                                   <h5><b>Order #01369-451287</b></h5>
+                                                   <h5><b>ConcertName1</b></h5><br>
+                                                   Status: <button type="button" class="btn btn-success btn-sm">PAID</button><br><br>
+                                                   Total Price: <b>฿4300.00</b><br>
+                                               </div>
+                                               <div class="col-lg-6 text-left">
+                                                    <b>Buyer: </b>&nbsp; Napong Tansakul<br>
+                                                    <b>Email: </b>&nbsp; napong@gmail.com<br>
+                                                    <b>Phone: </b>&nbsp; +66891099877<br>
+                                                    <b>Payment via: </b>&nbsp; Credit Card<br>
+                                                    <b>Ordered At:</b> 02 March 2017 13:48<br><br>
+                                               </div>
+                                                        
+                                              <!--TABLE-->
+                                              <div class="row">
+                                                  <div class="col-lg-12"><hr width=100%> <!--Horizontal rule-->
+                                                      <h5>&nbsp;&nbsp;&nbsp;  Order Details</h5>
+                                                          <div class="table-responsive">
+                                                              <table class="table table-bordered table-hover">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th><center>Ticket Type</center></th>
+                                                                        <th><center>Price</center></th>
+                                                                        <th><center>Quantity</center></th>
+                                                                        <th><center>Subtotal</center></th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                <tbody>
+                                                                    <tr align="center">
+                                                                       <td>14 April - VIP</td>
+                                                                       <td>฿2800.00</td>
+                                                                       <td>1</td>
+                                                                       <td>2800.00</td>
+                                                                    </tr>
+                                                                    <tr align="center">
+                                                                       <td>14 April - Advance</td>
+                                                                       <td>฿1500.00</td>
+                                                                       <td>1</td>
+                                                                       <td>1500.00</td>
+                                                                       </tr>
+                                                                    </tbody>
+                                                            </table>
+                                                          </div>
+                                                  </div>
+                                                  <div class="col-lg-12 text-right"> Order total : &nbsp;<b>฿4300.00</b></div>    
+                                              </div>
+                                         </div>
                                       </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- /.panel-body-->
-                    </div> <!-- /.panel panel-info-->
-                    </div> <!-- /.End Concert1-->
+                                  </div>
+                              </div>
+                          </div> <!-- /.panel-body-->
+                      </div> <!-- /.panel panel-info-->
+                  </div> <!-- /.End Concert1-->
 
-                    <!--____________________Concert2 (HISTORY)____________________-->
-                    <div class="col-lg-10">
-                        <div class="panel panel-info" >
-                            <div class="panel-body">
-                                <div class="row">
 
+                  <!--___Concert2 ___-->
+                  <div class="col-lg-12 ">
+                      <div class="panel panel-info" >
+                          <div class="panel-body">
+                                <div class="row" >
                                     <div class="col-lg-6">
-                                        <div class="col-lg-6" align="left"><img src="https://static1.squarespace.com/static/54a6e652e4b00f7c5fb09e89/t/580f9acaf7e0abd1f4b0c0dd/1477417686480/RobertEllis_EuroTour_V3_Thumb.jpg?format=500w" style="width:250px;height:250px;">
+                                        <div class="col-lg-6" align="left"><img src="https://static1.squarespace.com/static/54a6e652e4b00f7c5fb09e89/t/580f9acaf7e0abd1f4b0c0dd/1477417686480/RobertEllis_EuroTour_V3_Thumb.jpg?format=500w" style="width:280px;height:280px;">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 text-left">
@@ -342,80 +369,74 @@
                                         <button type="button" class="btn btn-link" data-toggle="collapse" data-parent="#accordion" href="#collapse2">More Detail <i class="fa fa-angle-down" style="font-size:18px"></i></button>
                                     </div>
                                 </div>
-                                
+                                            
                                 <br>
 
                                 <div class="panel-group" id="accordion">
                                     <div class="panel panel-info">
-                                      <div id="collapse2" class="panel-collapse collapse">
-                                        <div class="panel-body">
+                                       <div id="collapse2" class="panel-collapse collapse">
+                                          <div class="panel-body">
                                             <div class="col-lg-6 text-left">
                                                 <h5><b>Order #01369-451287</b></h5>
                                                 <h5><b>ConcertName1</b></h5><br>
                                                 Status: <button type="button" class="btn btn-warning btn-sm">OWING</button><br><br>
                                                 Total Price: <b>฿1500.00</b><br>
                                             </div>
-                                            <div class="col-lg-6 text-left">
+                                             <div class="col-lg-6 text-left">
                                                 <b>Buyer: </b>&nbsp; Napong Tansakul<br>
                                                 <b>Email: </b>&nbsp; napong@gmail.com<br>
                                                 <b>Phone: </b>&nbsp; +66891099877<br>
                                                 <b>Payment via: </b>&nbsp; Credit Card<br>
                                                 <b>Ordered At:</b> 02 March 2017 13:48<br><br>
-                                            </div>
-                                        
+                                             </div>
 
-                                        <!--TABLE-->
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <hr width=100%> <!--Horizontal rule-->
-                                                    <h5>&nbsp;&nbsp;&nbsp;  Order Details</h5>
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered table-hover">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th><center>Ticket Type</center></th>
-                                                                    <th><center>Price</center></th>
-                                                                    <th><center>Quantity</center></th>
-                                                                    <th><center>Subtotal</center></th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr align="center">
-                                                                    <td>14 April - Advance</td>
-                                                                    <td>฿1500.00</td>
-                                                                    <td>1</td>
-                                                                    <td>1500.00</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 text-right">
-                                                    Order total : &nbsp;<b>฿1500.00</b>
-                                                </div>    
-                                            </div>
+                                              <!--TABLE-->
+                                              <div class="row">
+                                                  <div class="col-lg-12"><hr width=100%> <!--Horizontal rule-->
+                                                      <h5>&nbsp;&nbsp;&nbsp;  Order Details</h5>
+                                                          <div class="table-responsive">
+                                                              <table class="table table-bordered table-hover">
+                                                                  <thead>
+                                                                      <tr>
+                                                                          <th><center>Ticket Type</center></th>
+                                                                          <th><center>Price</center></th>
+                                                                          <th><center>Quantity</center></th>
+                                                                          <th><center>Subtotal</center></th>
+                                                                      </tr>
+                                                                  </thead>
+                                                                  <tbody>
+                                                                    <tr align="center">
+                                                                        <td>14 April - Advance</td>
+                                                                        <td>฿1500.00</td>
+                                                                        <td>1</td>
+                                                                        <td>1500.00</td>
+                                                                    </tr>
+                                                                  </tbody>
+                                                            </table>
+                                                          </div>
+                                                  </div>
+                                                  <div class="col-lg-12 text-right"> Order total : &nbsp;<b>฿1500.00</b></div>    
+                                              </div>
+                                         </div>
                                       </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <!-- /.panel-body-->
-                    </div> <!-- /.panel panel-info-->
-                    </div> <!-- /.End Concert2-->
+                                  </div>
+                              </div>
+                          </div> <!-- /.panel-body-->
+                      </div> <!-- /.panel panel-info-->
+                  </div> <!-- /.End Concert2-->
 
                 </div> <!-- /.row -->
-                </div> <!-- /.panel-body -->
-            </div> <!-- /..panel-info -->
-        </div> <!-- /.col-lg-12 -->
-    </div> <!-- /.row -->
-</div> <!-- /.container-->
-
-
-
+              </div> <!-- /.panel-body -->
+            </div> <!-- /.col-lg-12 -->
+          </div> <!-- /.row -->
+        </div> <!-- /.container-->
       </div><!-- Fisish div history -->
-    
-    </div>
-  </div>
-</div>
+      
+     </div><!-- tab-content -->
+  </div><!-- Fisish thumbnail -->
+</div><!-- Fisish container -->
+
+<div style="margin-bottom:3%;"></div>
 
 <!-- Footer -->
       <footer style="background-color:rgba(255,255,255,0.1);">
@@ -450,4 +471,4 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/scrolling-nav.js"></script>
   </body>
-</html>
+  </html>

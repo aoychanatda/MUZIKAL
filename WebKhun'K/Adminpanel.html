@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+
+  <title>Admin</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!--NAV BAR -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="index.html"><img src="img/bulma-logo.png" alt="Cinque Terre" width="220" height="40"></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+
+                <!-- ORGANIZER Dropdown right-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Sign Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+<!--LEFT MENU-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav"><br>
+
+                    <!--Menu-->
+                    <li class="active">
+                    <a class="btn btn-primary btn-xl" href="summernote.html" >+ Create Artical</a>
+                    <li><a href="Adminpanel.html"><i class="fa fa-fw fa-book"></i> All Artical</a></li>
+                    <li><a href="allre.html"><i class="fa fa-fw fa-envelope"></i> Concert Request</a></li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            All Artical
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-book"></i>  <a href="Adminpanel.html">All Artical</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+          <!--tab-->
+                  <div class=".col-md-3 .col-md-offset-3 text-right"><a class="btn btn-info" href="summernote.html">+ Create Artical</a></div>
+
+
+                 <table id="allre1-dt" class="table table-striped" cellspacing="0" width="100%">
+                            <thead>
+                               <tr>
+                                    <th>Title</th>
+                                    <th>Writer</th>
+                                    <th>Date</th>
+                                    <th></th>
+
+                               </tr>
+                            </thead>
+                               <tbody>
+                                    <tr>
+                                        <td><a href="data-concert.html">Gambol x ZAAP present Hyper Fest</a></td>
+                                        <td>Taeyeon Kim</td>
+                                        <td>xx/xx/xxxx</td>
+                                        <td><a class="btn btn-default" href="editform.html" >Edit</a>
+                                        <a class="btn btn-success" href="Artical.html" >View Artical</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="data-concert.html">Nylon music night out #3</a></td>
+                                        <td>Tiffany Hwang</td>
+                                        <td>xx/xx/xxxx</td>
+                                        <td><a class="btn btn-default" href="editform.html" >Edit</a>
+                                        <a class="btn btn-success" href="Artical.html" >View Detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="data-concert.html">Single Festival 2017 #CHIANGMAI</a></td>
+                                        <td>Jessica Jung</td>
+                                        <td>xx/xx/xxxx</td>
+                                        <td><a class="btn btn-default" href="editform.html" >Edit</a>
+                                        <a class="btn btn-success" href="Artical.html" >View Detail</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+  </script>
+
+</body>
+</html>

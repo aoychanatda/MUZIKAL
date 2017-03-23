@@ -58,14 +58,15 @@
       </div>
       <div class="modal-footer">
       <div  class="text-center">
-        
-        Not a member?<br>
+        <a href="#" data-toggle="modal" data-target="#Forget" data-dismiss="modal">Forget password?</a>
+         | Not a member?
         <a href="#" data-toggle="modal" data-target="#SignUp" data-dismiss="modal">Sign up</a>
       </div></div>
       
     </div>
   </div>
 </div>
+
 <!--End Sing in-->
 
 <!--Modal SignUp-->
@@ -76,12 +77,14 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="text-center"><h4 class="modal-title" id="myModalLabel">Sign Up</h4></div>
       </div>
-      <div class="row" style="width: 35%; margin: 0 auto;"><span>
+      <div class="row"><span>
         <div class="modal-body">
-          <a href="#" class="thumbnail">
-            <img src="img/test2.jpg" class="img-responsive" data-toggle="modal" data-target="#SignUpMem" data-dismiss="modal"></a>
-          <a href="#" class="thumbnail"> 
-            <img src="img/test3.jpg" class="img-responsive" data-toggle="modal" data-target="#SignUpOrg" data-dismiss="modal"></a>
+          <center>
+
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#SignUpMem" data-dismiss="modal">Sign up for Member</button>
+          <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#SignUpOrg" data-dismiss="modal">Sign up for Organizer</button>
+          </center>
+          
           </div>
           </span>
         </div>
@@ -154,7 +157,28 @@
   </div>
 </div>
 
-<!--End Sing up-->
+<!-- Modal forgetpassword -->
+<div class="modal fade" id="Forget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="text-center"><h4 class="modal-title" id="myModalLabel">Forget Password</h4></div>
+      </div>
+      <div class="modal-body">
+        <center>Please fill your email</center><br>
+        <div style="text-align:center;"><form name="forgetpw" method="post" action="">
+            Email: <input type="text" name="email" style="margin-right:5%;"></div><br>
+          <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        </form>
+      </div>
+      <div class="modal-footer">
+      <div  class="text-center">
+      </div></div>
+      
+    </div>
+  </div>
+</div>
 
 <div style="margin-top:2%;"></div>
 <!-- Start Poster concert-->
@@ -272,7 +296,7 @@
         <div class="row">
          <div class="container ">
          <div class="col-lg-3 col-md-6" style="padding: 85px 0; text-align:center;">
-            <a href="#" style="text-decoration: none"><h3><font color="white">What is Muzikal</font></h3></a>
+            <a href="What.html" style="text-decoration: none"><h3><font color="white">What is Muzikal</font></h3></a>
          </div>
          <div class="col-lg-4 col-md-6"></div>
          <div class="col-lg-3 col-md-6">

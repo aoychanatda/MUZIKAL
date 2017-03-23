@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: 'Kanit', sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -105,7 +105,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Kanit', sans-serif;
   font-size: 1em;
 }
 button,
@@ -261,7 +261,7 @@ th {
   }
 }
 @font-face {
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Kanit', sans-serif;
 
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
@@ -270,7 +270,7 @@ th {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Kanit', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -1082,7 +1082,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1092,7 +1092,7 @@ input,
 button,
 select,
 textarea {
-  font-family: inherit;
+  font-family: 'Kanit', sans-serif;
   font-size: inherit;
   line-height: inherit;
 }
@@ -1183,7 +1183,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: 'Kanit', sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1531,7 +1531,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: 'Kanit', sans-serif;
 }
 code {
   padding: 2px 4px;
@@ -4019,7 +4019,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid #ddd;
 }
 .nav-tabs > li {
-  float: left;
+  float: left.nav-tabs > li, .nav-pills > li;
   margin-bottom: -1px;
 }
 .nav-tabs > li > a {
@@ -4084,14 +4084,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-bottom-color: #fff;
   }
 }
+.nav-pills {
+    text-align:center;
+}
 .nav-pills > li {
-  float: left;
+  float:none;
+  display:inline-block;
+  zoom:1; /* hasLayout ie7 trigger */
 }
 .nav-pills > li > a {
   border-radius: 4px;
 }
 .nav-pills > li + li {
   margin-left: 2px;
+}
+.center-pills {
+    display: flex;
+    justify-content: center;
 }
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
@@ -5990,7 +5999,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Kanit", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
@@ -6109,7 +6118,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;

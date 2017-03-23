@@ -9,6 +9,7 @@
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/modernizr.custom.js"></script>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,8 +58,8 @@
       </div>
       <div class="modal-footer">
       <div  class="text-center">
-        
-        Not a member?<br>
+        <a href="#" data-toggle="modal" data-target="#Forget" data-dismiss="modal">Forget password?</a>
+         | Not a member?
         <a href="#" data-toggle="modal" data-target="#SignUp" data-dismiss="modal">Sign up</a>
       </div></div>
       
@@ -76,12 +77,14 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="text-center"><h4 class="modal-title" id="myModalLabel">Sign Up</h4></div>
       </div>
-      <div class="row" style="width: 35%; margin: 0 auto;"><span>
+      <div class="row"><span>
         <div class="modal-body">
-          <a href="#" class="thumbnail">
-            <img src="img/test2.jpg" class="img-responsive" data-toggle="modal" data-target="#SignUpMem" data-dismiss="modal"></a>
-          <a href="#" class="thumbnail"> 
-            <img src="img/test3.jpg" class="img-responsive" data-toggle="modal" data-target="#SignUpOrg" data-dismiss="modal"></a>
+          <center>
+
+          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#SignUpMem" data-dismiss="modal">Sign up for Member</button>
+          <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#SignUpOrg" data-dismiss="modal">Sign up for Organizer</button>
+          </center>
+          
           </div>
           </span>
         </div>
@@ -154,71 +157,77 @@
   </div>
 </div>
 
-<div style="margin-top:2%;"></div>
-<!-- Start product-->
-<div class="container">
-	<div class="row" style="width: 80%; margin: 0 auto">
-
-			<div class="col-xs-12 col-sm-6 col-md-4">        
-				<a href="#" class="thumbnail">
-					<img src="img/test4.JPG" class="img-responsive">
-
-					
-					<div class="text"><center><h4>Concert1</h4></center></div>
-					<div class="text"><center><h5>...........</h5></center></div>
-					<div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-				</a>        
-			</div>
-				 
-			<div class="col-xs-12 col-sm-6 col-md-4">    
-				<a href="#" class="thumbnail">
-					<img src="img/test2.JPG" class="img-responsive">
-					<div class="text"><center><h4>Concert2</h4></center></div>
-					<div class="text"><center><h5>...........</h5></center></div>
-					<div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-				</a>
-			</div>
-			
-				
-			<div class="col-xs-12 col-sm-6 col-md-4">    
-				<a href="#" class="thumbnail">
-					<img src="img/test3.JPG" class="img-responsive">
-					<div class="text"><center><h4>Concert3</h4></center></div>
-					<div class="text"><center><h5>...........</h5></center></div>
-					<div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-				</a>
-			</div>
-			
-			<div class="col-xs-12 col-sm-6 col-md-4">        
-				<a href="#" class="thumbnail">
-					<img src="img/test4.JPG" class="img-responsive">
-					<div class="text"><center><h4>Concert4</h4></center></div>
-					<div class="text"><center><h5>...........</h5></center></div>
-					<div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-				</a>        
-			</div>
-				 
-			<div class="col-xs-12 col-sm-6 col-md-4">    
-				<a href="#" class="thumbnail">
-					<img src="img/test2.JPG" class="img-responsive">
-					<div class="text"><center><h4>Concert5</h4></center></div>
-					<div class="text"><center><h5>...........</h5></center></div>
-					<div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-				</a>
-			</div>
-			
-				
-			<div class="col-xs-12 col-sm-6 col-md-4">    
-				<a href="#" class="thumbnail">
-					<img src="img/test3.JPG" class="img-responsive">
-					<div class="text"><center><h4>Concert6</h4></center></div>
-					<div class="text"><center><h5>...........</h5></center></div>
-					<div class="text-center" style="padding:5px;"><button type="button" class="btn btn-danger" >View Detail</button></div>
-				</a>
-			</div>
-	</div>        
+<!-- Modal forgetpassword -->
+<div class="modal fade" id="Forget" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="text-center"><h4 class="modal-title" id="myModalLabel">Forget Password</h4></div>
+      </div>
+      <div class="modal-body">
+        <center>Please fill your email</center><br>
+        <div style="text-align:center;"><form name="forgetpw" method="post" action="">
+            Email: <input type="text" name="email" style="margin-right:5%;"></div><br>
+          <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        </form>
+      </div>
+      <div class="modal-footer">
+      <div  class="text-center">
+      </div></div>
+      
+    </div>
+  </div>
 </div>
-<!-- End product -->
+
+
+  <div style="margin-top:5%;"></div>
+  <!-- Start product-->
+  <center><h1 class="white">All Concert</h1></center>
+  <div class="container" style="width: 100%;">
+    <div class="row" style="width: 100%; margin-left:-3%;">
+  <ul class="grid cs-style-2">
+      <div class="col-sm-4 col-xs-12">
+          <li>
+            <figure>
+              <img src="img/concert1.jpg" alt="img02">
+              <figcaption>
+                <h3>Rap is now</h3>
+                <span>Rap is now Season 3 Zero to Heroes!</span>
+                <a href="#">View Detail!</a>
+              </figcaption>
+            </figure>
+          </li>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+          <li>
+            <figure>
+              <img src="img/concert2.jpg" alt="img02">
+              <figcaption>
+                <h3>Rap is now</h3>
+                <span>Rap is now Season 3 Zero to Heroes!</span>
+                <a href="#">View Detail!</a>
+              </figcaption>
+            </figure>
+          </li>
+      </div>
+      <div class="col-sm-4 col-xs-12">
+          <li>
+            <figure>
+              <img src="img/concert3.jpg" alt="img02">
+              <figcaption>
+                <h3>Rap is now</h3>
+                <span>Rap is now Season 3 Zero to Heroes!</span>
+                <a href="#">View Detail!</a>
+              </figcaption>
+            </figure>
+          </li>
+      </div>
+
+  </ul>
+    </div>
+  </div>        
+  <!-- End product -->
 
 <!-- Footer -->
       <footer style="background-color:rgba(255,255,255,0.1);">
@@ -249,5 +258,6 @@
 		<script src="js/jquery-3.1.1.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+    <script src="js/toucheffects.js"></script>
 	</body>
 </html>

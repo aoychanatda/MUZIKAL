@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+
+  <title>Concert's Detail</title>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script> 
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/plugins/morris.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="wrapper2">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!--NAV BAR -->
+             <body class="colorful3">
+        <!-- Navigation bar-->
+        <nav class="navbar navbar-custom navbar-fixed-top">
+          <div class="container-fluid">
+              <div class="navbar-brand" style="width:10%;">
+              <a class="navbar-header" href="indexOrg.html">
+              <img src="img/muzikal1logo-invert.png" style="width:130%; height:130%;">
+              </a>
+              </div>
+              <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
+              <form action="" class="navbar-nav search-form" style="margin:10px;">
+                  <div class="navbar-nav form-group has-feedback">
+                        <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
+                          <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
+                  </div>
+              </form>
+              <!--Start Button dropdown after sign in -->
+              <div class="btn-group navbar-nav navbar-btn">
+
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; color:white;">
+                <img src="img/test2.jpg" class="navbar-nav" style="width:35px; height:35px; border-radius:24px; margin-right:5px">
+                Oliveoil <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
+                  <li><a href="ProfileAd.html" style="color:white;">My Profile</a></li>
+                  <li><a href="Adminpanel.html" style="color:white;">My Artical</a></li>
+                  <li><a href="index.html" style="color:white;">Sign out</a></li>
+                </ul>
+              </div>
+              </ul>
+            </div>
+        </nav><br>
+
+        <!--LEFT MENU-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav"><br>
+
+                    <!--Menu-->
+                    <li class="active">
+                    <li><a href="Adminpanel.html"><i class="fa fa-fw fa-book"></i> All Artical</a></li>
+                    <li><a href="allre.html"><i class="fa fa-fw fa-envelope"></i> Concert Request</a></li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <i class="fa fa-edit"></i> Concert's Detail
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-envelope"></i>  <a href="allre.html">Concert Request</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-edit"></i> Concert's Detail
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <h3>Organizer Detail</h3> 
+                <div id="organizer-detail">
+                  <div class="row">
+                    <div class="col-sm-4">
+                        Company name: <div class="well well-sm">แม่สาวน้อย จำกัดมหาชน</div>
+                        Email: <div class="well well-sm">oil@example.com</div>
+                    </div>
+                      <div class="col-sm-4">
+                        Contact name: <div class="well well-sm">หนูแดง</div>
+                        Phone: <div class="well well-sm">082345523</div>
+                      </div>
+                  </div>
+                </div>
+
+
+                <h3>Concert Detail</h3> 
+                <div id="concert-detail">
+                  Concert's name: <div class="well well-sm">Midnight Max Festival 2017 #UBON RATCHATHANI</div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                        Starts Date: <div class="well well-sm">31 March 2017</div>
+                        Ends Date: <div class="well well-sm">17:00</div>
+                    </div>
+                      <div class="col-sm-4">
+                        Starts Time:<div class="well well-sm">01 April 2017</div>
+                        Ends Time:<div class="well well-sm">00:00</div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4">
+                        Concert type: <div class="well well-sm">Paid/Free</div>
+                        Ticket average price (Thai baht): <div class="well well-sm">150-200</div>
+                    </div>
+                      <div class="col-sm-4">
+                        Size of concert: <div class="well well-sm">10,000-20,000 seats</div>
+                        Location: <div class="well well-sm">Bangkok</div>
+                      </div>
+                  </div>
+                  Media: <div class="well well-sm"><a href="http://www.google.com">google.jpg</a><br>
+                  <a href="http://www.allkpop.com/upload/2016/07/af_org/Taeyeon_1469682197_af_org.jpg">taeyeon.jpg</a></div>
+                  Additional message: <div class="well well-sm">ล็อบบี้มาม่า พลานุภาพซิ้มตุ๊ก ไวอากร้า แป๋วซัมเมอร์ฮิบรู เจ๊ พุทโธเชฟ ฮิปฮอป ปักขคณนาทอมเอ๊าะนายแบบ สะบึมฉลุยจิ๊กโก๋ซี้สะกอม กับดักป๋าโมเดล อันตรกิริยารายชื่อ เพนกวินแคชเชียร์มาร์คติงต๊อง ดีพาร์ตเมนต์ฮ็อตด็อกเชฟ ว้อยยนตรกรรมบรรพชนคาวบอยคอนเซปต์ ภควัมปติชินบัญชรมลภาวะสต็อก คันธาระ
+
+โกเต็กซ์ครัวซองหลวงปู่ ซามูไรรามาธิบดีอิกัวนาปฏิสัมพันธ์ ร็อคเครปไมค์ เอ็นเตอร์เทนรีดไถฮิปโปบ๋อย ดีพาร์ทเมนต์ ฟลุตไพลินไฮเอนด์คอนโดมิเนียม พรีเมียมจูน ตรวจสอบ รีโมตเชฟบ๊อบ กับดักชัตเตอร์ พริตตี้ ป๋าพาร์ ชีส พรีเซ็นเตอร์ไฟแนนซ์น็อคสุริยยาตรไหร่ สเปคไฟแนนซ์ บอยคอตต์แรลลี่มินท์ซิ้ม
+
+ฮิบรูเอาท์ดอร์อาข่าซีอีโอ อิเลียด เวิร์ลด์ ศึกษาศาสตร์แพนด้าไลท์ เปปเปอร์มินต์เจี๊ยว โคโยตี คอร์รัปชัน ซาฟารีวันเวย์จึ๊กปักขคณนาปัจฉิมนิเทศ สึนามิคอนโดมิเนียมต่อยอดแฟรี แรงใจโมหจริต ภควัมบดีเด้อ ซีนบุ๋น แอโรบิคเยลลี่ซัมเมอร์ สะเด่า เอ็นทรานซ์คอปเตอร์วอร์รูมงี้ ไทม์เช็งเม้ง
+
+แคมเปญมัฟฟิน เบอร์เกอร์สุริยยาตร์เจี๊ยวโปรโมเตอร์ไฮไลต์ แอสเตอร์ ไฮไลต์ธุหร่ำแกสโซฮอล์เอ็นเตอร์เทนรายชื่อ พริตตี้วอล์คสัมนาบอมบ์ สเปคธรรมา บรรพชนเอสเปรสโซ เฟรมเวิร์กช็อป เบญจมบพิตรสโตร์ทาวน์เฮาส์ช็อตวีไอพี คำสาป ดอกเตอร์บริกร อัลตราฟีด แบนเนอร์ มลภาวะภารตะ เปโซโปสเตอร์เช็งเม้ง โกลด์แบต
+
+ดีไซน์เนอร์ แครอทวอลล์ปูอัดแมมโบ้ เฟรช สต็อกคอร์รัปชันเคอร์ฟิวดิสเครดิตสุริยยาตร์ คลับรีโมทซี้หมายปอง เอนทรานซ์ อุปัทวเหตุเอ็กซ์เพรสอันตรกิริยาวิว ถูกต้องนายพรานเทคโน อัลไซเมอร์ไฮเวย์ซาร์ คันธาระแรงใจบู๊เห็นด้วย กรุ๊ปมหาอุปราชา คอร์ส ทัวริสต์ร็อค บร็อคโคลีบ๋อยรีไซเคิลแซวเซ็นเซอร์ แฟรี่ ถ่ายทำโซนออสซี่</div>
+                </div>
+
+                
+                
+<div class=".col-md-3 .col-md-offset-3 text-right"><button class="btn btn-info">Accept</button> <button class="btn btn-danger">Cancel</button></div>
+</body>
+</html>

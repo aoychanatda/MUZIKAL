@@ -141,17 +141,6 @@
                         <p>Concert's Hall name: <input type="text" class="form-control" name="hall">
                       </div>
                   </div>
-                  <!-- Ticket type -->
-                  <h4><b>Ticket Types</b></h4>
-                  <p><label class="checkbox-inline"><input type="checkbox" value="eticket">E-Tickets</label>
-                  <label class="checkbox-inline"><input type="checkbox" value="cardticket">Card Tickets</label><br>
-
-                  <!-- Payment type -->
-                  <h4><b>Payment Types</b></h4>
-                  <label class="checkbox-inline"><input type="checkbox" value="credit">Credit Card</label>
-                  <label class="checkbox-inline"><input type="checkbox" value="m-cash">M Cash</label>
-                   <label class="checkbox-inline"><input type="checkbox" value="billpay">Bill Payment</label>
-
 
 
                   <!-- Browse Cover-->
@@ -175,9 +164,9 @@
                     <div class="well input_fields_wrap1">
                       <div class="row">
                         <div class="col-sm-3">Date: <input type="text" class="form-control" name="date[]"></div>
-                        <div class="col-sm-3">Time: <input type="text" class="form-control" name="time[]"></div>
                       </div>
-                      <p><b>Add Zone</b> <a class="btn btn-success add_field_button1"><i class="glyphicons glyphicon-plus"></i></a>
+                    </div>
+                  <p><b>Add Zone</b> <a class="btn btn-success glyphicons glyphicon-plus add_field_button1"></a>
                       <div class="well input_fields_wrap2">
                         <div class="row">
                          <div class="col-sm-3">
@@ -186,7 +175,6 @@
                           <p>Price: <input type="text" class="form-control" name="price[]">
                         </div>
                       </div>
-                    </div>
 
                   </div>
 
@@ -205,7 +193,7 @@
                             e.preventDefault();
                             if(x < max_fields){ //max input box allowed
                                 x++; //text box increment
-                                $(this).closest(wrapper).append('<div class="well input_fields_wrap1"><a href="#" class="btn btn-danger remove_field" style="float:right;"><i class="glyphicon glyphicon-remove"></i></a><div class="row"><div class="col-sm-3">Date: <input type="text" class="form-control" name="date[]"></div> <div class="col-sm-3">Time: <input type="text" class="form-control" name="time[]"></div></div><p><b>Add Zone</b> <a class="btn btn-success add_field_button1"><i class="glyphicons glyphicon-plus"></i></a><div class="well input_fields_wrap2"><div class="row"><div class="col-sm-3"><p>Zone Name: <input type="text" class="form-control" name="zoneName[]"><p>Number of seats: <input type="text" class="form-control" name="numOfview[]"><p>Price: <input type="text" class="form-control" name="price[]"></div></div></div></div>'); //add input box
+                                $(this).closest(wrapper).append('<div class="well input_fields_wrap1"><a href="#" class="btn btn-danger remove_field" style="float:right;"><i class="glyphicon glyphicon-remove"></i></a><div class="row"><div class="col-sm-3">Date: <input type="text" class="form-control" name="date[]"></div></div></div></div>'); //add input box
 
                             }
                         });
@@ -214,7 +202,7 @@
                             e.preventDefault();
                             if(x < max_fields){ //max input box allowed
                                 x++; //text box increment
-                                $(this).closest(showtime_wrapper).append('<div class="well input_fields_wrap2"><a href="#" class="btn btn-danger remove_field" style="float:right;"><i class="glyphicon glyphicon-remove"></i></a><div class="row"><div class="col-sm-3"><p>Zone Name: <input type="text" class="form-control" name="zoneName[]"><p>Number of seats: <input type="text" class="form-control" name="numOfview[]"><p>Price: <input type="text" class="form-control" name="price[]"></div></div></div>'); //add input box
+                                $(this).closest(wrapper).append('<div class="well input_fields_wrap2"><a href="#" class="btn btn-danger remove_field" style="float:right;"><i class="glyphicon glyphicon-remove"></i></a><div class="row"><div class="col-sm-3"><p>Zone Name: <input type="text" class="form-control" name="zoneName[]"><p>Number of seats: <input type="text" class="form-control" name="numOfview[]"><p>Price: <input type="text" class="form-control" name="price[]"></div></div></div>'); //add input box
                             }
                         });
                         $(wrapper).on("click", removeField, function(e) { //user click on remove text

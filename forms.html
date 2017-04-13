@@ -9,10 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Concert Request Form</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
@@ -116,39 +119,115 @@
                 </div>
                 
                 <!-- /.row -->
-                <div id="concert-detail">
-                  Concert's name: <div class="well well-sm">Midnight Max Festival 2017 #UBON RATCHATHANI</div>
+                <div id="concert-request-form">
+                <div class="row">
+                  <div class="col-sm-8">
+                  <p>Concert's name: <input type="text" class="form-control" name="concert_name"></div></div>
                   <div class="row">
                     <div class="col-sm-4">
-                        Starts Date: <div class="well well-sm">31 March 2017</div>
-                        Ends Date: <div class="well well-sm">17:00</div>
+                        <p>Starts Date: <input type="text" class="form-control" name="s_date" placeholder="Day Month Year">
+                        <p>Starts Time: <input type="text" class="form-control" name="s_time" placeholder="xx:xx AM/PM">
                     </div>
                       <div class="col-sm-4">
-                        Starts Time:<div class="well well-sm">01 April 2017</div>
-                        Ends Time:<div class="well well-sm">00:00</div>
+                        <p>Ends Date: <input type="text" class="form-control" name="e_date" placeholder="Day Month Year">
+                        <p>Ends Time: <input type="text" class="form-control" name="e_time" placeholder="xx:xx AM/PM">
                       </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-4">
-                        Concert type: <div class="well well-sm">Paid/Free</div>
-                        Ticket average price (Thai baht): <div class="well well-sm">150-200</div>
+                        <p>Location: <input type="text" class="form-control" name="location">
                     </div>
                       <div class="col-sm-4">
-                        Size of concert: <div class="well well-sm">10,000-20,000 seats</div>
-                        Location: <div class="well well-sm">Bangkok</div>
+                        <p>Concert's Hall name: <input type="text" class="form-control" name="hall">
                       </div>
                   </div>
-                  Media: <div class="well well-sm"><a href="http://www.google.com">google.jpg</a><br>
-                  <a href="http://www.allkpop.com/upload/2016/07/af_org/Taeyeon_1469682197_af_org.jpg">taeyeon.jpg</a></div>
-                  Additional message: <div class="well well-sm">ล็อบบี้มาม่า พลานุภาพซิ้มตุ๊ก ไวอากร้า แป๋วซัมเมอร์ฮิบรู เจ๊ พุทโธเชฟ ฮิปฮอป ปักขคณนาทอมเอ๊าะนายแบบ สะบึมฉลุยจิ๊กโก๋ซี้สะกอม กับดักป๋าโมเดล อันตรกิริยารายชื่อ เพนกวินแคชเชียร์มาร์คติงต๊อง ดีพาร์ตเมนต์ฮ็อตด็อกเชฟ ว้อยยนตรกรรมบรรพชนคาวบอยคอนเซปต์ ภควัมปติชินบัญชรมลภาวะสต็อก คันธาระ
+                  <!-- Ticket type -->
+                  <h4><b>Ticket Types</b></h4>
+                  <p><label class="checkbox-inline"><input type="checkbox" value="eticket">E-Tickets</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="cardticket">Card Tickets</label><br>
 
-โกเต็กซ์ครัวซองหลวงปู่ ซามูไรรามาธิบดีอิกัวนาปฏิสัมพันธ์ ร็อคเครปไมค์ เอ็นเตอร์เทนรีดไถฮิปโปบ๋อย ดีพาร์ทเมนต์ ฟลุตไพลินไฮเอนด์คอนโดมิเนียม พรีเมียมจูน ตรวจสอบ รีโมตเชฟบ๊อบ กับดักชัตเตอร์ พริตตี้ ป๋าพาร์ ชีส พรีเซ็นเตอร์ไฟแนนซ์น็อคสุริยยาตรไหร่ สเปคไฟแนนซ์ บอยคอตต์แรลลี่มินท์ซิ้ม
+                  <!-- Payment type -->
+                  <h4><b>Payment Types</b></h4>
+                  <label class="checkbox-inline"><input type="checkbox" value="credit">Credit Card</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="m-cash">M Cash</label>
+                   <label class="checkbox-inline"><input type="checkbox" value="billpay">Bill Payment</label>
 
-ฮิบรูเอาท์ดอร์อาข่าซีอีโอ อิเลียด เวิร์ลด์ ศึกษาศาสตร์แพนด้าไลท์ เปปเปอร์มินต์เจี๊ยว โคโยตี คอร์รัปชัน ซาฟารีวันเวย์จึ๊กปักขคณนาปัจฉิมนิเทศ สึนามิคอนโดมิเนียมต่อยอดแฟรี แรงใจโมหจริต ภควัมบดีเด้อ ซีนบุ๋น แอโรบิคเยลลี่ซัมเมอร์ สะเด่า เอ็นทรานซ์คอปเตอร์วอร์รูมงี้ ไทม์เช็งเม้ง
 
-แคมเปญมัฟฟิน เบอร์เกอร์สุริยยาตร์เจี๊ยวโปรโมเตอร์ไฮไลต์ แอสเตอร์ ไฮไลต์ธุหร่ำแกสโซฮอล์เอ็นเตอร์เทนรายชื่อ พริตตี้วอล์คสัมนาบอมบ์ สเปคธรรมา บรรพชนเอสเปรสโซ เฟรมเวิร์กช็อป เบญจมบพิตรสโตร์ทาวน์เฮาส์ช็อตวีไอพี คำสาป ดอกเตอร์บริกร อัลตราฟีด แบนเนอร์ มลภาวะภารตะ เปโซโปสเตอร์เช็งเม้ง โกลด์แบต
 
-ดีไซน์เนอร์ แครอทวอลล์ปูอัดแมมโบ้ เฟรช สต็อกคอร์รัปชันเคอร์ฟิวดิสเครดิตสุริยยาตร์ คลับรีโมทซี้หมายปอง เอนทรานซ์ อุปัทวเหตุเอ็กซ์เพรสอันตรกิริยาวิว ถูกต้องนายพรานเทคโน อัลไซเมอร์ไฮเวย์ซาร์ คันธาระแรงใจบู๊เห็นด้วย กรุ๊ปมหาอุปราชา คอร์ส ทัวริสต์ร็อค บร็อคโคลีบ๋อยรีไซเคิลแซวเซ็นเซอร์ แฟรี่ ถ่ายทำโซนออสซี่</div>
+                  <!-- Browse Cover-->
+                  <div id="Cover" class="form-group">
+                    <h4><label for="exampleInputFile">Browse Cover Image</label></h4>
+                    <input type="file" id="exampleInputFile" >
+                    <p class="help-block">Allow only size 851*400 px.</p>
+                  </div>
+                  <!--Browse Poster -->
+                  <div id="Poster" class="form-group">
+                    <h4><label for="exampleInputFile">Browse Poster</label></h4>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Allow only size 612*612 px.</p>
+                  </div>
+
+                  <!-- Ticket -->
+                  <h4><b>Manage Ticket</b></h4>
+                  <div class="input_fields_wrap">
+                    <b>Add Show time</b> <a class="btn btn-success glyphicons glyphicon-plus add_field_button"></a> <br>
+
+                    <div class="well input_fields_wrap1">
+                      <div class="row">
+                        <div class="col-sm-3">Date: <input type="text" class="form-control" name="date[]"></div>
+                        <div class="col-sm-3">Time: <input type="text" class="form-control" name="time[]"></div>
+                      </div>
+                      <p><b>Add Zone</b> <a class="btn btn-success add_field_button1"><i class="glyphicons glyphicon-plus"></i></a>
+                      <div class="well input_fields_wrap2">
+                        <div class="row">
+                         <div class="col-sm-3">
+                          <p>Zone Name: <input type="text" class="form-control" name="zoneName[]">
+                          <p>Number of seats: <input type="text" class="form-control" name="numOfview[]">
+                          <p>Price: <input type="text" class="form-control" name="price[]">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                <script>
+                    $(document).ready(function() {
+                        var max_fields        = 10; //maximum input boxes allowed
+                        var wrapper           = ".input_fields_wrap"; //Fields wrapper
+                        var showtime_wrapper  = ".input_fields_wrap1"; //Showtime wrapper
+                        var zone_wrapper      = ".input_fields_wrap2"; //Zone wrapper
+                        var addShowtime       = ".add_field_button"; //Add showtime button
+                        var addZone           = ".add_field_button1"; //Add zone button
+                        var removeField       = ".remove_field"; //Remove button
+
+                        var x = 1; //initlal text box count
+                        $(wrapper).on("click", addShowtime, function(e) { // (Showtime) add Showtime on click
+                            e.preventDefault();
+                            if(x < max_fields){ //max input box allowed
+                                x++; //text box increment
+                                $(this).closest(wrapper).append('<div class="well input_fields_wrap1"><a href="#" class="btn btn-danger remove_field" style="float:right;"><i class="glyphicon glyphicon-remove"></i></a><div class="row"><div class="col-sm-3">Date: <input type="text" class="form-control" name="date[]"></div> <div class="col-sm-3">Time: <input type="text" class="form-control" name="time[]"></div></div><p><b>Add Zone</b> <a class="btn btn-success add_field_button1"><i class="glyphicons glyphicon-plus"></i></a><div class="well input_fields_wrap2"><div class="row"><div class="col-sm-3"><p>Zone Name: <input type="text" class="form-control" name="zoneName[]"><p>Number of seats: <input type="text" class="form-control" name="numOfview[]"><p>Price: <input type="text" class="form-control" name="price[]"></div></div></div></div>'); //add input box
+
+                            }
+                        });
+
+                        $(wrapper).on("click", addZone, function(e) { // (Zone) add zone on click
+                            e.preventDefault();
+                            if(x < max_fields){ //max input box allowed
+                                x++; //text box increment
+                                $(this).closest(showtime_wrapper).append('<div class="well input_fields_wrap2"><a href="#" class="btn btn-danger remove_field" style="float:right;"><i class="glyphicon glyphicon-remove"></i></a><div class="row"><div class="col-sm-3"><p>Zone Name: <input type="text" class="form-control" name="zoneName[]"><p>Number of seats: <input type="text" class="form-control" name="numOfview[]"><p>Price: <input type="text" class="form-control" name="price[]"></div></div></div>'); //add input box
+                            }
+                        });
+                        $(wrapper).on("click", removeField, function(e) { //user click on remove text
+                            e.preventDefault();
+                            $(this).closest('div').remove(); // Remove cloest parent (Zone or Showtime)
+                            x--;
+                        });
+                    });
+                  </script>
+
+                  
+                  
+                
                 </div>
 
                     <div class="col-lg-12">

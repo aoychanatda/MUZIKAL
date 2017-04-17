@@ -57,23 +57,19 @@ public class summernoteServlet extends HttpServlet {
             //เก็บ Article_ID  Date_Time, Article_Name, Content, User_ID, Map ลงTABLE Article
             
             //String User_ID = (String) session.getAttribute("User_ID");
-            //String ConcertName = (String) session.getAttribute("ConcertName");
-            //String Concert_ID = (String) session.getAttribute("Concert_ID");
-
-            String User_ID = "AD0001";
-            String ConcertName = "Midnight Max Festival 2017";
+            String Concert_ID = (String) request.getParameter("Concert_ID");
+            String User_ID = "ADM001";
             String Content =  request.getParameter("summerNoteText");
-            out.println(Content);
             String Map = (String) request.getParameter("MAP"); 
             
             try {
                 Statement stmt = conn.createStatement();
 
                 //Select Concert_ID
-                String sql_ = "Select Concert_ID from Concert where Concert_Name = '" + ConcertName + "'";
+                String sql_ = "Select Concert_Name from Concert where Concert_ID = '" + Concert_ID + "'";
                 ResultSet rs = stmt.executeQuery(sql_);
                 rs.next();
-                String Concert_ID = rs.getString("Concert_ID");
+                String ConcertName= rs.getString("Concert_Name");
                 
                 
                 //CREATE Article_ID

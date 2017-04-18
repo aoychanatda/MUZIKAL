@@ -64,12 +64,17 @@ public class ReserveServlet extends HttpServlet {
             try {
                 Statement stmt = conn.createStatement();
 
+                //Get Zone_name
+                String sqlz = "Select Zone_Name from Zone where Zone_ID = '" + Zone_ID + "'";
+                ResultSet zName = stmt.executeQuery(sqlz);
+                zName.next();
+                String Zone_Name = zName.getString("Zone_Name");
+                
                 //Price_of_Ticket จากตาราง Ticket
                 String sql_ = "Select Price from Zone where Zone_ID = '" + Zone_ID + "'";
                 ResultSet rs = stmt.executeQuery(sql_);
                 rs.next();
                 Float price = rs.getFloat("Price");
-                //Float price = Float.parseFloat(priceStr);
                 Float Total_Price = price*NumOfTicket;
                 
                 //-----------Reservation Table------------//
@@ -84,7 +89,6 @@ public class ReserveServlet extends HttpServlet {
                 }
 
                 Order_ID += numOrder;
-                out.println(Order_ID);
                 //UP DATE Reservation Table
                 String sql1 = "Insert into Reservation values('" + Order_ID  + "', '" + Order_Status+ "', '" +Total_Price+ "',CURDATE(), '" + User_ID + "', '" +"NO"+ "', '" +0+ "')";
                 stmt.executeUpdate(sql1);
@@ -105,13 +109,15 @@ public class ReserveServlet extends HttpServlet {
 
                     HttpSession session = request.getSession();
                     session.setAttribute("Order_ID", Order_ID);
+                    session.setAttribute("Total_Price", Total_Price);
                     session.setAttribute("NumOfTicket", NumOfTicket);
                     session.setAttribute("User_ID", User_ID);
-                    session.setAttribute("Total_Price", Total_Price);
+                    session.setAttribute("Zone_Name", Zone_Name);
+
                 }
                 
-                RequestDispatcher obj = request.getRequestDispatcher("BuyTicket.jsp");
-                obj.forward(request, response);
+                //RequestDispatcher obj = request.getRequestDispatcher("BuyTicket.jsp");
+                //obj.forward(request, response);
 
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);

@@ -63,7 +63,7 @@ public class RequestConcertServlet extends HttpServlet {
             //Concert
             String Concert_ID = "CON_";
             String Concert_Name = request.getParameter("concert_name");
-            String Status = "Pending";
+            String Status = "PENDING";
             //String Picture_Cover = "";
             //String Picture_Poster = "";
             float Income = 0;

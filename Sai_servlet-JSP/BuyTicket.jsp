@@ -5,7 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,6 +35,12 @@
         <link href="js/jquery-3.1.1.min.js" rel="stylesheet">
     </head>
     <body class="colorful3">
+        
+        <!-- set attribute -->
+        <c:set var="Total_Price" value="${Total_Price}" scope="session"  />
+        <c:set var="SerCredit" value="${49.69}" />
+        <c:set var="SerBill" value="${62.61}"/>
+        
         <!-- Navigation bar-->
         <nav class="navbar navbar-custom navbar-fixed-top">
             <div class="container-fluid">
@@ -71,10 +81,11 @@
                 <div class="col-xs-12">        
                     <div class="thumbnail">
                         <img src="img/dek.JPG" class="img-responsive">
-                        <div class="text"><h4>Dek Sai Silp #Bangkok</h4></div>
+                        <div class="text"><h4>Dek Sai Silp #รอเค</h4></div>
                         <!--Start create map-->         
-                        <span>สนามกีฬา จรัญ บุรพรัตน์ กรุงเทพมหานคร ประเทศไทย  </span><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" data-toggle="collapse" data-target="#demo"></span>
+                        <span>สนามกีฬา จรัญ บุรพรัตน์ กรุงเทพมหานคร ประเทศไทย #รอเค  </span><span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" data-toggle="collapse" data-target="#demo"></span>
                         <div id="demo" class="collapse">
+                            MAP #รอเค
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.807477148134!2d100.55236929999997!3d13.970062300000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2815dad1aaaab%3A0xf0e449779da55126!2zSnVuZ2xlIFdhdGVyIFBhcmsg4Lib4LiX4Li44Lih4LiY4Liy4LiZ4Li1!5e0!3m2!1sth!2sth!4v1489800873155" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div><br>
                         <!--End create map-->
@@ -100,7 +111,7 @@
                         </div>
                     </div>
 
-                    <center><br><h3>คำสั่งซื้อ #รหัสคอน-XXXXXX</h3></center>
+                    <center><br><h3>คำสั่งซื้อ #รหัสคอน-<%= session.getAttribute("Order_ID") %></h3></center>
 
                     <!-- Start Table Order-->
                     <div>
@@ -114,12 +125,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <td scope="row">Pre sale</td>
-                            <td>590</td>
-                            <td>1</td>
-                            <td>590</td>
+                            <td scope="row"><%= session.getAttribute("Zone_Name") %></td>
+                            <td><%= session.getAttribute("Price") %></td>
+                            <td><%= session.getAttribute("NumOfTicket") %></td>
+                            <td><%= session.getAttribute("Total_Price") %></td>
                             </tbody>
-                            <tbody>
+                            <!--<tbody>
                             <td scope="row">Service Charge 7%</td>
                             <td>26</td>
                             <td>1</td>
@@ -130,7 +141,7 @@
                             <td></td>
                             <td></td>
                             <td>616</td>
-                            </tbody> 
+                            </tbody>--> 
                         </table>
                     </div>           
                     <!-- End Table Order -->
@@ -175,8 +186,9 @@
                                 </div>
 
                                 <div class="panel panel-default">
-                                    <div class="panel-body">*ค่าบริการบัตรเครดิตจำนวน ฿49.69<br><hr>
-                                        ราคารวมทั้งสิ้น: ฿1,551.34</div>
+                                    <div class="panel-body">*ค่าบริการบัตรเครดิตจำนวน ฿<c:out value="${SerCredit}" /><br><hr>
+                                        <fmt:formatNumber var="Sum1" type="number" minFractionDigits="2" maxFractionDigits="2" value="${Total_Price+SerCredit}" />
+                                        ราคารวมทั้งสิ้น: ฿<c:out value="${Sum1}" /></div>
                                 </div>
                                 <input type="radio" name="method" value="credit" checked="checked"/> ยืนยันการใช้บัตรเครดิต
 
@@ -192,12 +204,12 @@
                                     </div>
                                     <div class="media-body">
                                         <h4 class="media-heading">Kim Taeyeon</h4>
-                                        <p>หมายเลขบัตร: 1111111</p>
+                                        <p>หมายเลขบัตร: <%= session.getAttribute("Usesr_ID") %></p>
                                     </div>
                                 </div><br>
                                 <div class="panel panel-default">
                                     <div class="panel-body"><hr>
-                                        ราคารวมทั้งสิ้น: ฿1,501.65</div>
+                                        ราคารวมทั้งสิ้น: <c:out value="${Total_Price}" /></div>
                                 </div>
                                 <input type="radio" name="method" value="mcash" /> ยืนยันการใช้ Mcash
                             </div>
@@ -211,8 +223,9 @@
                                     * เคาน์เตอร์ต่างๆ / ตู้เอทีเอ็ม สามารถชำระค่าบริการได้สูงสุด 30,000 บาท<br>
                                     * ในกรณีที่ชำระหลังวันหมดอายุ หรือจำนวนเงินไม่ถูกต้อง บริษัท อีเว้นท์ ป็อป จำกัด ขอสงวนสิทธิ์ในการคืนเงินและค่าธรรมเนียม</p><br></div>
                                 <div class="panel panel-default ">
-                                    <div class="panel-body">*ค่าบริการชำระเงินผ่านบิลจำนวน ฿62.61<br><hr>
-                                        ราคารวมทั้งสิ้น: ฿1,564.26</div>
+                                    <div class="panel-body">*ค่าบริการชำระเงินผ่านบิลจำนวน ฿<c:out value="${SerBill}" /><br><hr>
+                                        <fmt:formatNumber var="Sum2" type="number" minFractionDigits="2" maxFractionDigits="2" value="${Total_Price+SerBill}" />
+                                        ราคารวมทั้งสิ้น: <c:out value="${Sum2}" /></div>
                                 </div>
                                 <input type="radio" name="method" value="bill" /> ยืนยันการจ่ายเงินผ่าน Bill payment
 

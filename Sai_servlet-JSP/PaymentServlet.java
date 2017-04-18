@@ -122,6 +122,10 @@ public class PaymentServlet extends HttpServlet {
                         float Balance = price - (Total_Price + Service_charge);
                         String sql2 = "Update Member SET Balance = '" + Balance + "' WHERE User_ID = '" + User_ID + "'";
                         stmt.executeUpdate(sql2);
+                        
+                        //UPDATE Status
+                        String sqls = "Update Reservation SET Order_Status = '" + "PAID" + "' WHERE Order_ID = '" + Order_ID + "'";
+                        stmt.executeUpdate(sqls);
                     }
 
                     //++++++++ Payment Table ++++++++//

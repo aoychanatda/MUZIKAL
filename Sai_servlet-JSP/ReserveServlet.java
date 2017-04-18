@@ -51,10 +51,8 @@ public class ReserveServlet extends HttpServlet {
 
             //String Zone_ID = request.getParameter("zone_id");
             //int NumOfTicket = Integer.parseInt(request.getParameter("numTicket"));
-
             //HttpSession session = request.getSession();
             //String User_ID = (String) session.getAttribute("login_id");
-            
             String User_ID = "MEM001";
             String Zone_ID = "ZN__5AAA0";
             int NumOfTicket = 1;
@@ -69,14 +67,14 @@ public class ReserveServlet extends HttpServlet {
                 ResultSet zName = stmt.executeQuery(sqlz);
                 zName.next();
                 String Zone_Name = zName.getString("Zone_Name");
-                
+
                 //Price_of_Ticket จากตาราง Ticket
                 String sql_ = "Select Price from Zone where Zone_ID = '" + Zone_ID + "'";
                 ResultSet rs = stmt.executeQuery(sql_);
                 rs.next();
                 Float price = rs.getFloat("Price");
-                Float Total_Price = price*NumOfTicket;
-                
+                Float Total_Price = price * NumOfTicket;
+
                 //-----------Reservation Table------------//
                 //Create OrderID
                 String numOrd = "Select count(Order_ID) from Reservation where Order_ID LIKE 'RD%'";
@@ -90,7 +88,7 @@ public class ReserveServlet extends HttpServlet {
 
                 Order_ID += numOrder;
                 //UP DATE Reservation Table
-                String sql1 = "Insert into Reservation values('" + Order_ID  + "', '" + Order_Status+ "', '" +Total_Price+ "',CURDATE(), '" + User_ID + "', '" +"NO"+ "', '" +0+ "')";
+                String sql1 = "Insert into Reservation values('" + Order_ID + "', '" + Order_Status + "', '" + Total_Price + "',CURDATE(), '" + User_ID + "', '" + "NO" + "', '" + 0 + "')";
                 stmt.executeUpdate(sql1);
 
                 //-----------Ticket Table------------//
@@ -102,7 +100,6 @@ public class ReserveServlet extends HttpServlet {
                     String numTicket = numTic1.getString("count(Ticket_ID)");
                     String Ticket_ID = "T" + numTicket + "" + (Zone_ID.substring(3));
 
-                    
                     //UP DATE TICKET
                     String sql = "Insert into Ticket values('" + Ticket_ID + "', '" + price + "', '" + Order_ID + "', '" + Zone_ID + "')";
                     stmt.executeUpdate(sql);
@@ -114,13 +111,16 @@ public class ReserveServlet extends HttpServlet {
                     session.setAttribute("User_ID", User_ID);
                     session.setAttribute("Zone_Name", Zone_Name);
                     session.setAttribute("Price", price);
-                        
-
+//                    out.println(Order_ID);
+//                    out.println(Total_Price);
+//                    out.println(NumOfTicket);
+//                    out.println(User_ID);
+//                    out.println(Zone_Name);
+//                    out.println(price);
                 }
-                
-                //RequestDispatcher obj = request.getRequestDispatcher("BuyTicket.jsp");
-                //obj.forward(request, response);
 
+                RequestDispatcher obj = request.getRequestDispatcher("BuyTicket.jsp");
+                obj.forward(request, response);
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -107,6 +107,7 @@ public class ReserveServlet extends HttpServlet {
                     session.setAttribute("Order_ID", Order_ID);
                     session.setAttribute("NumOfTicket", NumOfTicket);
                     session.setAttribute("User_ID", User_ID);
+                    session.setAttribute("Total_Price", Total_Price);
                 }
                 
                 RequestDispatcher obj = request.getRequestDispatcher("BuyTicket.jsp");

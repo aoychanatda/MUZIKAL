@@ -113,6 +113,8 @@ public class ReserveServlet extends HttpServlet {
                     session.setAttribute("NumOfTicket", NumOfTicket);
                     session.setAttribute("User_ID", User_ID);
                     session.setAttribute("Zone_Name", Zone_Name);
+                    session.setAttribute("Price", price);
+                        
 
                 }
                 

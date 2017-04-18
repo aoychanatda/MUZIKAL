@@ -7,10 +7,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -20,6 +17,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Order;
+import model.Ticket;
+import model.Zone;
 
 /**
  *
@@ -37,12 +37,6 @@ public class ReserveServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private Connection conn;
-
-    @Override
-    public void init() {
-        conn = (Connection) getServletContext().getAttribute("connection");
-    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -55,74 +49,58 @@ public class ReserveServlet extends HttpServlet {
             //String User_ID = (String) session.getAttribute("login_id");
             String User_ID = "MEM001";
             String Zone_ID = "ZN__5AAA0";
-            int NumOfTicket = 1;
-            String Order_Status = "WAITING"; //PAID กับ WAITING
+            int NumOfTicket = 2;
+            String Order_Status = "WAITING"; //PAID or WAITING
 
-            //Count Ticket
             try {
-                Statement stmt = conn.createStatement();
-
                 //Get Zone_name
-                String sqlz = "Select Zone_Name from Zone where Zone_ID = '" + Zone_ID + "'";
-                ResultSet zName = stmt.executeQuery(sqlz);
-                zName.next();
-                String Zone_Name = zName.getString("Zone_Name");
-
-                //Price_of_Ticket จากตาราง Ticket
-                String sql_ = "Select Price from Zone where Zone_ID = '" + Zone_ID + "'";
-                ResultSet rs = stmt.executeQuery(sql_);
-                rs.next();
-                Float price = rs.getFloat("Price");
+                Zone zone = new Zone();
+                String Zone_Name = zone.getZoneName(Zone_ID);
+                
+                //Price_of_Ticket จากตาราง Zone
+                Float price = zone.getPrice(Zone_ID);
+                
                 Float Total_Price = price * NumOfTicket;
-
-                //-----------Reservation Table------------//
+                
+                //------------------------Reservation Table------------------------//
                 //Create OrderID
-                String numOrd = "Select count(Order_ID) from Reservation where Order_ID LIKE 'RD%'";
-                ResultSet numOrd1 = stmt.executeQuery(numOrd);
-                numOrd1.next();
-                String numOrder = numOrd1.getString("count(Order_ID)");
-                String Order_ID = "RD";
-                for (int i = numOrder.length(); i < 3; i++) {
-                    Order_ID += "0";
-                }
+                Order order = new Order();
+                String Order_ID = order.getOrder_ID();
+                out.println(Order_ID);
 
-                Order_ID += numOrder;
-                //UP DATE Reservation Table
-                String sql1 = "Insert into Reservation values('" + Order_ID + "', '" + Order_Status + "', '" + Total_Price + "',CURDATE(), '" + User_ID + "', '" + "NO" + "', '" + 0 + "')";
-                stmt.executeUpdate(sql1);
+                //Insert Order to Table
+                order.insertOrder(Order_ID, Order_Status, Total_Price, User_ID);
 
-                //-----------Ticket Table------------//
+                //--------------------------Ticket Table--------------------------//
                 for (int i = 1; i <= NumOfTicket; i++) {
                     //Create TicketID
-                    String numTic = "Select count(Ticket_ID) from Ticket where Ticket_ID LIKE 'T%'";
-                    ResultSet numTic1 = stmt.executeQuery(numTic);
-                    numTic1.next();
-                    String numTicket = numTic1.getString("count(Ticket_ID)");
-                    String Ticket_ID = "T" + numTicket + "" + (Zone_ID.substring(3));
+                    Ticket ticket = new Ticket();
+                    String Ticket_ID = ticket.getTicket_ID(Zone_ID);
+                    out.println(Ticket_ID);
 
-                    //UP DATE TICKET
-                    String sql = "Insert into Ticket values('" + Ticket_ID + "', '" + price + "', '" + Order_ID + "', '" + Zone_ID + "')";
-                    stmt.executeUpdate(sql);
+                    //Insert Ticket to Table
+                    ticket.insertTicket(Ticket_ID, price, Order_ID, Zone_ID);
+                }
 
-                    HttpSession session = request.getSession();
-                    session.setAttribute("Order_ID", Order_ID);
-                    session.setAttribute("Total_Price", Total_Price);
-                    session.setAttribute("NumOfTicket", NumOfTicket);
-                    session.setAttribute("User_ID", User_ID);
-                    session.setAttribute("Zone_Name", Zone_Name);
-                    session.setAttribute("Price", price);
+                HttpSession session = request.getSession();
+                session.setAttribute("Order_ID", Order_ID);
+                session.setAttribute("Total_Price", Total_Price);
+                session.setAttribute("NumOfTicket", NumOfTicket);
+                session.setAttribute("User_ID", User_ID);
+                session.setAttribute("Zone_Name", Zone_Name);
+                session.setAttribute("Price", price);
+                
 //                    out.println(Order_ID);
 //                    out.println(Total_Price);
 //                    out.println(NumOfTicket);
 //                    out.println(User_ID);
 //                    out.println(Zone_Name);
 //                    out.println(price);
-                }
 
                 RequestDispatcher obj = request.getRequestDispatcher("BuyTicket.jsp");
                 obj.forward(request, response);
             } catch (SQLException ex) {
-                Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ReserveServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }

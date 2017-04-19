@@ -50,12 +50,6 @@ public class RequestConcertServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private Connection conn;
-
-    @Override
-    public void init() {
-        conn = (Connection) getServletContext().getAttribute("connection");
-    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -105,7 +99,6 @@ public class RequestConcertServlet extends HttpServlet {
             
             String User_ID = "ORG000";
             try {
-                Statement stmt = conn.createStatement();
 
                 //---------------------Location Table--------------------//
                 //CREATE Location_ID

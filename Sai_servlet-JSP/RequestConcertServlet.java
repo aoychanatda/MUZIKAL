@@ -26,6 +26,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import java.io.PrintWriter;
+import model.Concert;
+import model.Location;
+import model.Showtime;
+import model.Zone;
 
 /**
  *
@@ -61,12 +65,8 @@ public class RequestConcertServlet extends HttpServlet {
             // ตำแหน่งที่รูปจะเซฟลง
             String savePath = "C:\\Users\\jirpinya\\Documents\\NetBeansProjects\\Project\\Project\\web\\img";
             //Concert
-            String Concert_ID = "CON_";
             String Concert_Name = request.getParameter("concert_name");
             String Status = "PENDING";
-            //String Picture_Cover = "";
-            //String Picture_Poster = "";
-            float Income = 0;
             String Start_Date = request.getParameter("s_date");
             String End_Date = request.getParameter("e_date");
             String Start_Time = request.getParameter("s_time");
@@ -94,8 +94,7 @@ public class RequestConcertServlet extends HttpServlet {
 
             //Showtime
             String Date[] = request.getParameterValues("date[]");
-            String Time = Start_Time + " - " + End_Time;
-
+            
             //Zone
             String Price[] = request.getParameterValues("price[]");
             String Zone_Name[] = request.getParameterValues("zoneName[]");
@@ -103,82 +102,56 @@ public class RequestConcertServlet extends HttpServlet {
 
             HttpSession session = request.getSession();
             //String User_ID = (String) session.getAttribute("login_id");
+            
             String User_ID = "ORG000";
             try {
                 Statement stmt = conn.createStatement();
 
                 //---------------------Location Table--------------------//
-                /* เช็คว่ายังไม่มีในตารางlocation
-                String numThisLo = "Select count(Location_ID) from Location where Location_ID LIKE 'LO%'";
-                ResultSet numThisLo1 = stmt.executeQuery(numThisLo);
-                numThisLo1.next();
-                String numThisLocation = numThisLo1.getString("count(Location_ID)");*/
                 //CREATE Location_ID
-                String numLo = "Select count(Location_ID) from Location where Location_ID LIKE 'LO%'";
-                ResultSet numLo1 = stmt.executeQuery(numLo);
-                numLo1.next();
-                String numLocation = numLo1.getString("count(Location_ID)");
-                String Location_ID = "LO_" + (Location_Name.substring(0, 3)).toUpperCase() + numLocation;
+                Location location = new Location();
+                String Location_ID = location.getLocation_ID(Location_Name);
 
                 //UP DATE Location table
-                String sql2 = "Insert into Location values('" + Location_ID + "', '" + Location_Name + "', '"
-                        + Hall_Name + "')";
-                stmt.executeUpdate(sql2);
+                location.insertLocation(Location_ID, Location_Name, Hall_Name);
 
                 //---------------------Concert Table-------------------//
                 //CREATE Concert_ID
-                String numCon = "Select count(Concert_ID) from Concert where Concert_ID LIKE 'CON%'";
-                ResultSet numCon1 = stmt.executeQuery(numCon);
-                numCon1.next();
-                String numConcert = numCon1.getString("count(Concert_ID)");
-                Concert_ID = Concert_ID + (Concert_Name.substring(0, 3)).toUpperCase() + numConcert;
+                Concert concert = new Concert();
+                String Concert_ID = concert.getConcert_ID(Concert_Name);
+                
                 //UP DATE Concert table
-                String sql = "Insert into Concert values('" + Concert_ID + "', '" + Concert_Name  +"', '" + Status + "', '"  +Location_ID+ "', '"  +User_ID+ "', '"  +covername+ "', '"  +postername+ "', '"  +Income+ "', '"  +Start_Date+ "', '"  +End_Date+ "', '"  +Start_Time+ "', '"  +End_Time+"', NOW())";
-                stmt.executeUpdate(sql);
+                concert.insertConcert(Concert_Name, Status, Location_ID, User_ID, covername, postername, Start_Date, End_Date, Start_Time, End_Time);
                 
                 //---------------------Showtime Table--------------------//
                 //LOOP ShowTime
                 for (int i = 0; i < Date.length; i++) {
-                    //Date date = new SimpleDateFormat("dd-MM-yyyy").parse("10-10-2010");
                     //CREATE Showtime_ID
-                    String numSh = "Select count(Showtime_ID) from Showtime where Showtime_ID LIKE 'SH%'";
-                    ResultSet numSh1 = stmt.executeQuery(numSh);
-                    numSh1.next();
-                    String numShowime = numSh1.getString("count(Showtime_ID)");
-                    String Showtime_ID = "SH_" + Concert_ID.substring(4) + "_" + numShowime;
-                    //String Showtime_ID = "SH_";
+                    Showtime showtime = new Showtime();
+                    String Showtime_ID = showtime.getShowtime_ID(Concert_ID);
 
-                    //UP DATE Showtime_ID
-                    //String sql3 = "Insert into Showtime values('" + Showtime_ID + "', '" + Date[i] + "', '" + "CON_MID000" + "')";
-                    String sql3 = "Insert into Showtime values('" + Showtime_ID +"', '"  +Start_Date+"', '"  +Concert_ID+ "')";
-                    stmt.executeUpdate(sql3);
+//                    //UP DATE Showtime_ID
+                      showtime.insertShowtime(Showtime_ID, Start_Date, Concert_ID);
 
                     //LOOP Zone
                     for (int j = 0; j < Zone_Name.length; j++) {
                         //-----------------------Zone Table----------------------//
                         //CREATE Zone_ID
-                        String numZn = "Select count(Zone_ID) from Zone where Zone_ID LIKE 'ZN%'";
-                        ResultSet numZn1 = stmt.executeQuery(numZn);
-                        numZn1.next();
-                        String numZone = numZn1.getString("count(Zone_ID)");
-
-                        String Zone_ID = "ZN_" + Showtime_ID.substring(3) + (Zone_Name[j].substring(0, 3)).toUpperCase() + numZone;
-//                        out.println(Zone_ID);
+                        Zone zone = new Zone();
+                        String Zone_ID = zone.getZone_ID(Showtime_ID, Zone_Name[j]);
+                        
                         int price = Integer.parseInt(Price[j]);
                         int number_of_Seat = Integer.parseInt(Number_of_Seat[j]);
                         
                         //UP DATE Zone_ID
-                        String sql4 = "Insert into Zone values('" + Zone_ID + "', '" + price + "', '" + Zone_Name[j] + "', '" + Showtime_ID + "', '" + number_of_Seat + "')";
-                        stmt.executeUpdate(sql4);
-                        
+                        zone.insertZone(Zone_ID, price, Zone_Name[j], Showtime_ID, number_of_Seat);
                     }
-
                 }
 
                 RequestDispatcher obj = request.getRequestDispatcher("index.jsp");
                 obj.forward(request, response);
             } catch (SQLException ex) {
-                Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RequestConcertServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }

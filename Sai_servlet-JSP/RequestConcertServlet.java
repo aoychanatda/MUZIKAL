@@ -70,7 +70,7 @@ public class summernoteServlet extends HttpServlet {
                 obj.forward(request, response);
                 
             } catch (SQLException ex) {
-                
+            
             }
         }
     }

@@ -19,6 +19,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.Member;
+import model.User;
 
 /**
  *
@@ -26,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "SignUpMember", urlPatterns = {"/SignUpMember"})
 public class SignUpMember extends HttpServlet {
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,90 +39,48 @@ public class SignUpMember extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    private Connection conn;
-    
-    @Override
-    public void init(){
-        conn = (Connection) getServletContext().getAttribute("connection");
-    }
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SignUpServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            
-            String Login_ID1 = "MEM";
+
+            String Login_ID1;
             String username1 = request.getParameter("username1");
             String password1 = request.getParameter("password1");
-            
+
             //String User_ID1 = "";
             String fname1 = request.getParameter("fname1");
             String lname1 = request.getParameter("lname1");
             String card1 = request.getParameter("card1");
             String email1 = request.getParameter("email1");
-            
+
             float balance1 = 500;
             String phone1 = request.getParameter("phone1");
             String address1 = request.getParameter("address1");
             String gender1 = request.getParameter("gender");
-            
+
             try {
+
+                //Account Table
+                Account account = new Account();
+                Login_ID1 = account.createLogin_ID();
+                account.insertAccount(Login_ID1, password1, username1);
+
+                //User Table
+                User user = new User();
+                user.insertUser(Login_ID1, fname1, email1, lname1);
                 
-                Statement stmt = conn.createStatement();
-                
-                //Login_ID1 
-                String num = "Select count(Login_ID) from Account where Login_ID Like'MEM%'";
-                ResultSet num1 = stmt.executeQuery(num);
-                num1.next();
-                String numS = num1.getString("count(Login_ID)");
-                for(int i = numS.length(); i < 3; i++){
-                    Login_ID1 += "0";
-                }
-                Login_ID1 += numS;
-                
-                
-                //Inset Table
-                String sql2 = "Insert into User values('" + Login_ID1 + "', '" + 
-                        fname1 + "', '" + email1 + "', '" + lname1 + "')";
-                int numRow2 = stmt.executeUpdate(sql2);
-                
-                String sql1 = "Insert into Account values('" + Login_ID1 + "', '" + 
-                        password1 + "', '" + username1 + "', '" + Login_ID1 + "')";
-                int numRow1 = stmt.executeUpdate(sql1);
-                
-                
-                String sql3 = "Insert into Member values('" + Login_ID1 + "', '" + phone1 + "', '" + 
-                        balance1 + "', '" + gender1 + "', '" + address1 + "', '" + card1 + "', '" + "" + "')";
-                int numRow3 = stmt.executeUpdate(sql3);
-                
-                
+                //Member Table
+                Member member = new Member();
+                member.insertMember(Login_ID1, phone1, balance1, gender1, address1, card1);
+
                 RequestDispatcher obj = request.getRequestDispatcher("index.jsp");
-                if (numRow1 == 1){
-                    obj.forward(request, response);
-                }
-                if (numRow2 == 1){
-                    obj.forward(request, response);
-                }
-                if (numRow3 == 1){
-                    obj.forward(request, response);
-                }
-                
-                
+                obj.forward(request, response);
+
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpMember.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
-            out.println("</body>");
-            out.println("</html>");
+
         }
     }
 

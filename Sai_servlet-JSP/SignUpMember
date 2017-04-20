@@ -63,7 +63,7 @@ public class SignUpMember extends HttpServlet {
 
                 //Account Table
                 Account account = new Account();
-                Login_ID1 = account.createLogin_ID();
+                Login_ID1 = account.createMemLogin_ID();
                 account.insertAccount(Login_ID1, password1, username1);
 
                 //User Table

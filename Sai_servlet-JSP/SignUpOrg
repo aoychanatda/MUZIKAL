@@ -19,6 +19,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Account;
+import model.ContactPerson;
+import model.Member;
+import model.OrganizerCompany;
+import model.User;
 
 /**
  *
@@ -27,12 +32,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "SignUpOrg", urlPatterns = {"/SignUpOrg"})
 public class SignUpOrg extends HttpServlet {
 
-    private Connection conn;
-
-    @Override
-    public void init() {
-        conn = (Connection) getServletContext().getAttribute("connection");
-    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,15 +46,8 @@ public class SignUpOrg extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SignUpOrg</title>");
-            out.println("</head>");
-            out.println("<body>");
 
-            String Login_ID2 = "ORG";
+            String Login_ID2;
             String username2 = request.getParameter("username2");
             String password2 = request.getParameter("password2");
 
@@ -71,80 +63,25 @@ public class SignUpOrg extends HttpServlet {
             String comPhone2 = request.getParameter("comPhone2");
 
             try {
-                Statement stmt = conn.createStatement();
-                
-                
-                //Login_ID1 
-                String num = "Select count(Login_ID) from Account where Login_ID Like 'ORG%'";
-                ResultSet num1 = stmt.executeQuery(num);
-                num1.next();
-                String numS = num1.getString("count(Login_ID)");
-                for (int i = numS.length(); i < 3; i++) {
-                    Login_ID2 += "0";
-                }
-                Login_ID2 += numS;
-                
-                //Insert Table
-                String sql2 = "Insert into User values('" + Login_ID2 + "', '"
-                        + fname2 + "', '" + email2 + "', '" + lname2 + "')";
-                int numRow2 = stmt.executeUpdate(sql2);
-                
-                String sql1 = "Insert into Account values('" + Login_ID2 + "', '"
-                        + password2 + "', '" + username2 + "', '" + Login_ID2 + "')";
-                int numRow1 = stmt.executeUpdate(sql1);
-                               
-                //Com_ID2
-                String check = "Select * from Organizer_company where Company_name = '" + comName2 + "' ";
-                ResultSet rs = stmt.executeQuery(check);
-                
-                if (rs.next()) {
-                    com_ID2 = rs.getString("Company_ID");
-                    //out.println(com_ID2);
-                    String sql3 = "Insert into Contact_person values('" + Login_ID2 + "', '" + comPhone2 + "', '" + com_ID2 + "')";
-                    int numRow3 = stmt.executeUpdate(sql3);                  
-                }
-                else {
-                    String numCom = "Select count(Company_ID) from Organizer_company";
-                    ResultSet numCom1 = stmt.executeQuery(numCom);
-                    numCom1.next();
-                    String comS = numCom1.getString("count(Company_ID)");
-                    for (int i = numS.length(); i < 3; i++) {
-                        com_ID2 += "0";
-                    }
-                    com_ID2 += comS;
-                    
-                    String sql4 = "Insert into Organizer_company values('" + com_ID2 + "', '"
-                            + comPhone2 + "', '" + comName2 + "')";
-                    int numRow4 = stmt.executeUpdate(sql4);
-                    
-                    String sql3 = "Insert into Contact_person values('" + Login_ID2 + "', '" + comPhone2 + "', '" + com_ID2 + "')";
-                    int numRow3 = stmt.executeUpdate(sql3); 
-                             
-                }
+                //Account Table
+                Account account = new Account();
+                Login_ID2 = account.createOrgLogin_ID();
+                account.insertAccount(Login_ID2, password2, username2);
 
+                //User Table
+                User user = new User();
+                user.insertUser(Login_ID2, fname2, email2, lname2);
                 
-
+                //Add New OrganizerCompany and Add New ContactPerson
+                OrganizerCompany organizer_company = new OrganizerCompany();
+                organizer_company.addNewOrganizerCompany(comName2, Login_ID2, comPhone2);
 
                 RequestDispatcher obj = request.getRequestDispatcher("What.html");
-                if (numRow1 == 1) {
-                    obj.forward(request, response);
-                }
-                /*if (numRow2 == 1) {
-                    obj.forward(request, response);
-                }
-                if (numRow3 == 1) {
-                    obj.forward(request, response);
-                }
-                /*if (numRow4 == 1) {
-                    obj.forward(request, response);
-                }*/
+                obj.forward(request, response);
 
             } catch (SQLException ex) {
                 Logger.getLogger(SignUpOrg.class.getName()).log(Level.SEVERE, null, ex);
             }
-
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

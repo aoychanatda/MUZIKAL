@@ -19,6 +19,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.ContactPerson;
+import model.Member;
+import model.User;
 
 /**
  *
@@ -36,26 +39,17 @@ public class SaveProfileServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private Connection conn;
-
-    @Override
-    public void init() {
-        conn = (Connection) getServletContext().getAttribute("connection");
-    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            Statement stmt = conn.createStatement();
             try {
 
                 String strButton = request.getParameter("save");
-                
                 String strFName = request.getParameter("Fname");
                 String strLName = request.getParameter("Lname");
                 String strEmail = request.getParameter("Email");
-                String strPhoneNum = request.getParameter("Phone_Number");
                 String strPhonenum = request.getParameter("Phone_number");
                 String strBDate = request.getParameter("Birth_Date");
                 String strAddress = request.getParameter("Address");
@@ -65,31 +59,24 @@ public class SaveProfileServlet extends HttpServlet {
                  HttpSession session = request.getSession(true);
                  String LoginID = (String) session.getAttribute("Login_ID");
                  
+                 User user = new User();
+                 user.UpdateUser(strFName, strLName, strEmail, LoginID);
 
                 if (strButton.equals("Member")) {
-                    String sql1 = "Update Member set Phone_Number='" + strPhoneNum + "', Gender='" + strGen + "', Address='" + strAddress + "',IDcard='" + strIDcard + "', Birth_Date='" + strBDate + "' where User_ID='" + LoginID + "';";
-                    String sql2 = "Update User set Fname='" + strFName + "', Lname='" + strLName + "', Email='" + strEmail + "' where User_ID='" + LoginID + "';";
-                    stmt.executeUpdate(sql1);
-                    stmt.executeUpdate(sql2);
+                    Member member = new Member();
+                    member.UpdateMember(strPhonenum, strGen, strAddress, strIDcard, strBDate, LoginID);
                     response.sendRedirect("ProfileMember.jsp");
                 }
                 else if(strButton.equals("Admin")){
-                    String sql3 = "Update User set Fname='" + strFName + "', Lname='" + strLName + "', Email='" + strEmail + "' where User_ID='" + LoginID + "';";
-                    stmt.executeUpdate(sql3);
                     response.sendRedirect("ProfileAdmin.jsp");
-                    
                 }
                 else if(strButton.equals("Organize")){
-                    String sql4 = "Update Contact_person set Phone_number='" + strPhonenum + "' where User_ID='" + LoginID + "';";
-                    String sql5 = "Update User set Fname='" + strFName + "', Lname='" + strLName + "', Email='" + strEmail + "' where User_ID='" + LoginID + "';";
-                    stmt.executeUpdate(sql4);
-                    stmt.executeUpdate(sql5);
+                    ContactPerson contract_person = new ContactPerson();
+                    contract_person .UpdateContactPerson(strPhonenum, LoginID);
                     response.sendRedirect("ProfileOrganize.jsp");
                 }
 
-                
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 out.println(e.getMessage());
                 e.printStackTrace();
             }

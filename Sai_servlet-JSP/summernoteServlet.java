@@ -66,6 +66,9 @@ public class summernoteServlet extends HttpServlet {
                 //UPDATE Article 
                 article.insertConcert(ConcertName, Content, User_ID, Map);
 
+                //UPDATE Status
+                article.UpdateStatusPUBLISHED(ConcertName);
+                
                 RequestDispatcher obj = request.getRequestDispatcher("summernote.jsp");
                 obj.forward(request, response);
                 

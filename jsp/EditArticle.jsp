@@ -60,7 +60,7 @@
                             <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
                         </div>
                     </form>
-                    <% if ("Login_ID" == "MEM") { %>
+                    <% if (checkRoleS.equals("MEM")) { %>
                     <!--Start Button dropdown after sign in -->
                     <div class="btn-group navbar-nav navbar-btn">
 
@@ -75,7 +75,7 @@
                             <li><a href="index.jsp" style="color:white;">Sign out</a></li>
                         </ul>
                     </div>
-                    <% } else if ("Login_ID" == "ORG") { %>
+                    <% } else if (checkRoleS.equals("ORG")) { %>
                     <!--Start Button dropdown after sign in -->
                     <div class="btn-group navbar-nav navbar-btn">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; color:white;">
@@ -89,7 +89,7 @@
                             <li><a href="index.html" style="color:white;">Sign out</a></li>
                         </ul>
                     </div>
-                    <% } else if ("Login_ID" == "ADM") { %>
+                    <% } else if (checkRoleS.equals("ADM")) { %>
                     <!--Start Button dropdown after sign in -->
                     <div class="btn-group navbar-nav navbar-btn">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; color:white;">

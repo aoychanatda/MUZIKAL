@@ -227,7 +227,7 @@
 
     <!--What is Muzikal-->
     <p align="center">
-        <a href="AllConcerts.html"><button type="button" class="btn btn-custom2">See More</button></a>
+        <a href="AllConcerts.jsp"><button type="button" class="btn btn-custom2">See More</button></a>
     </p>
     <!-- End what is muzikal-->
 

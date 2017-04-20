@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.Article;
 
 /**
  *
@@ -37,18 +38,11 @@ public class EditFormServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private Connection conn;
-
-    @Override
-    public void init() {
-        conn = (Connection) getServletContext().getAttribute("connection");
-    }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            Statement stmt = conn.createStatement();
             String strButton = request.getParameter("btn");
 
             String strDTime = request.getParameter("Date_Time");
@@ -57,17 +51,14 @@ public class EditFormServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             String LoginID = (String) session.getAttribute("Login_ID");
             String ArticleID = request.getParameter("Article_ID");
+            
             try {
                 
-
                 if (strButton.equals("Save")) {
                     out.println(Content);
-                    String sql = "UPDATE Article SET Date_Time=NOW(), Content=? WHERE Article_ID=? ;";
-                    PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql);
-                    pstmt.setString(1, Content);
-                    pstmt.setString(3, ArticleID);
-                    int rowsAffected = pstmt.executeUpdate();
-                    //System.out.println(sql);
+                    Article article = new Article();
+                    article.UpdateDateTime(ArticleID);
+                    article.UpdateContent(ArticleID, Content);                    
                     response.sendRedirect("EditArticle.jsp");
                 }
                 else if (strButton.equals("View Article")) {
@@ -76,7 +67,6 @@ public class EditFormServlet extends HttpServlet {
                 }
 
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 out.println(e.getMessage());
                 e.printStackTrace();
             }

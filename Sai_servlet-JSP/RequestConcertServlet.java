@@ -111,7 +111,7 @@ public class RequestConcertServlet extends HttpServlet {
                 //---------------------Concert Table-------------------//
                 //CREATE Concert_ID
                 Concert concert = new Concert();
-                String Concert_ID = concert.getConcert_ID(Concert_Name);
+                String Concert_ID = concert.getNewConcert_ID(Concert_Name);
                 
                 //UP DATE Concert table
                 concert.insertConcert(Concert_Name, Status, Location_ID, User_ID, covername, postername, Start_Date, End_Date, Start_Time, End_Time);

@@ -58,9 +58,9 @@
                             </button>
 
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
-                                <li><a href="ProfileMem.html" style="color:white;">My Profile</a></li>
-                                <li><a href="ArticalMem.html" style="color:white;">My Artical</a></li>
-                                <li><a href="index.html" style="color:white;">Sign out</a></li>
+                                <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
+                                <li><a href="ArticalMem.jsp" style="color:white;">My Artical</a></li>
+                                <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
                     </ul>
@@ -93,7 +93,7 @@
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                                 <li><a href="ProfileOrg.html" style="color:white;">My Profile</a></li>
                                 <li><a href="AllDashboard.html" style="color:white;">DashBoard</a></li>
-                                <li><a href="index.html" style="color:white;">Sign out</a></li>
+                                <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
                     </ul>
@@ -125,13 +125,13 @@
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                                 <li><a href="ProfileAd.html" style="color:white;">My Profile</a></li>
                                 <li><a href="Adminpanel.html" style="color:white;">My Artical</a></li>
-                                <li><a href="index.html" style="color:white;">Sign out</a></li>
+                                <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
                     </ul>
                 </div>
             </nav>
-            <% out.println("in org"); %>
+            <% out.println("in admin"); %>
             <% } %>
             <!-- End Check Nav Bar -->
             

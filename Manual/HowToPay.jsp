@@ -43,7 +43,6 @@
                                 <img src="img/test2.jpg" class="navbar-nav" style="width:35px; height:35px; border-radius:24px; margin-right:5px">
                                 Oliveoil <span class="caret"></span>
                             </button>
-
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                                 <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
                                 <li><a href="ArticalMem.jsp" style="color:white;">My Artical</a></li>
@@ -138,7 +137,7 @@
                               - วันหมดอายุบัตร วันหมดอายุจะอยู่บนหน้าบัตรเครดิต/บัตรเดบิต ของท่าน<br>
                               - หมายเลข CVV รหัสเลข 3 ตัว จะอยู่ที่ด้านหลังของบัตร<br>
                               หลังจากที่คุณกรอกข้อมูลครบถ้วนแล้ว กด “ยืนยันการสั่งซื้อ” ระบบจะบันทึกการจ่ายผ่านบัตรเครดิตและเรียกเก็บเงินคุณในรอบบิลถัดไป
-                              หรือระบบจะตัดเงินของคุณทันทีกรณีจ่ายผ่านบัตรเดบิต
+                              หรือระบบจะตัดเงินของคุณทันทีกรณีจ่ายผ่านบัตรเดบิต<br>
                             </p>
                             
                             <center><h3>การชำระเงินผ่านบิล</h3></center>

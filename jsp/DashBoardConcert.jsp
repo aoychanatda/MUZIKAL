@@ -233,7 +233,14 @@
                                                 <td><c:out value="${row2.Order_ID}"/></td> 
                                                 <td><c:out value="${row2.User_ID}"/></td>
                                                 <td><c:out value="${row2.Order_datetime}"/></td>
-                                                <td class="btn btn-success col-md-2"><c:out value="${row2.Order_Status}"/></td>
+                                                <c:choose>
+                                                        <c:when test="${row2.Order_Status == 'WAITING'}">
+                                                            <td class="btn btn-warning col-md-2">WAITING</td>
+                                                        </c:when>
+                                                        <c:when test="${row2.Order_Status == 'PAID'}">
+                                                            <td class="btn btn-success col-md-2">PAID</td>
+                                                        </c:when>
+                                                    </c:choose>
                                                 <td><c:out value="${row2.Total_Price}"/></td>
                                                 <td><c:out value="${row2.Concert_Name}"/></td>
                                             </tr>

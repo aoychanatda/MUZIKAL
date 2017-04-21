@@ -32,12 +32,6 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                    <form action="" class="navbar-nav search-form" style="margin:10px;">
-                        <div class="navbar-nav form-group has-feedback">
-                            <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                            <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
                     <!--Start Button dropdown after sign in -->
                     <div class="btn-group navbar-nav navbar-btn">
 
@@ -48,7 +42,7 @@
 
                         <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                             <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
-                            <li><a href="ArticalMem.jsp" style="color:white;">My Article</a></li>
+                            <li><a href="ArticalMem.jsp" style="color:white;">My Ticket</a></li>
                             <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                         </ul>
                     </div>
@@ -65,12 +59,6 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                    <form action="" class="navbar-nav search-form" style="margin:10px;">
-                        <div class="navbar-nav form-group has-feedback">
-                            <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                            <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
                     <!--Start Button dropdown after sign in -->
                     <div class="btn-group navbar-nav navbar-btn">
 
@@ -99,12 +87,7 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                    <form action="" class="navbar-nav search-form" style="margin:10px;">
-                        <div class="navbar-nav form-group has-feedback">
-                            <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                            <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
+                    
                     <!--Start Button dropdown after sign in -->
                     <div class="btn-group navbar-nav navbar-btn">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; color:white;">
@@ -148,32 +131,32 @@
                         <div class="cd" id="member">
                             <h3><b><span class="glyphicon glyphicon-question-sign"></span> FAQ MEMBER</b></h3>
                             <hr>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีสมัครสมาชิก Muzikal</a> <br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">เมนู My Ticket คืออะไร</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">Mu Cash คืออะไร</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">Ticket Refund คืออะไร</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">การจองบัตรคอนเสิร์ต/รับบัตรคอนเสิร์ต</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">การชำระเงิน</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">จัดการบัญชีข้อมูลส่วนตัว</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignUpMem.jsp">วิธีสมัครสมาชิก Muzikal</a> <br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignInOut.jsp">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="WhatMyTicket.jsp">เมนู My Ticket คืออะไร</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="WhatMuCash.jsp">Mu Cash คืออะไร</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="WhatTicketRefund.jsp">Ticket Refund คืออะไร</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoReserve.jsp">การจองบัตรคอนเสิร์ต/รับบัตรคอนเสิร์ต</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowToPay.jsp">การชำระเงิน</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoEditMem.jsp">จัดการบัญชีข้อมูลส่วนตัว</a><br>
                         </div>
                         <div class="cd" id="org">
                             <h3><b><span class="glyphicon glyphicon-question-sign"></span> FAQ ORGANIZER</b></h3>
                             <hr>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีสมัครเป็น Organizer</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignUpOrg.jsp">วิธีสมัครเป็น Organizer</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignInOutOrg.jsp">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
                             <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีการส่งข้อมูลคอนเสิร์ต</a><br>
                             <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">ข้อมูลดูยอดขายของคอนเสิร์ตอย่างไร</a><br>
                             <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีการดูข้อมูลคอนเสิร์ต</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">จัดการบัญชีข้อมูลส่วนตัว</a></div>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoEditOrg.jsp">จัดการบัญชีข้อมูลส่วนตัว</a></div>
                         <div class="cd" id="admin">
                             <h3><b><span class="glyphicon glyphicon-question-sign"></span> FAQ ADMIN</b></h3>
                             <hr>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">ดูบทความทั้งหมดอย่างไร</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">การจัดการการร้องขอจัดคอนเสิร์ต</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีสร้าง/แก้ไข/ลบ/ดูบทความ</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">จัดการบัญชีข้อมูลส่วนตัว</a></div>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignIO_AD.jsp">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoViewArticle.jsp">ดูบทความทั้งหมดอย่างไร</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoRequestAdmin.jsp">การจัดการการร้องขอจัดคอนเสิร์ต</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoCrEdViAdmin.jsp">วิธีสร้าง/แก้ไข/ลบ/ดูบทความ</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoEditAdmin.jsp">จัดการบัญชีข้อมูลส่วนตัว</a></div>
                         </p>
                     </div>
                 </div>

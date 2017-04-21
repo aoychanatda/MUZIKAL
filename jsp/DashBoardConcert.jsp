@@ -122,7 +122,7 @@
                     <!-- /.row -->
 
                     <!-- summary overview -->
-                    <div class="row">
+<!--                    <div class="row">
                         <div class="col-lg-4 col-md-6">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
@@ -163,9 +163,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /.row -->
+                     /.row 
 
-                    <!--GRAPH-->
+                    GRAPH
                     <div class="row">
                         <div class="col-lg-8" >
                             <div class="panel panel-default">
@@ -191,15 +191,15 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div>-->
 
                     <!--TABLE-->
                     <div class="row">
                         <div class="col-lg-12">
 
-                            <h2>Concert_Name</h2>
+                            <!--<h2>Concert_Name</h2>-->
                             <sql:query var = "user2" dataSource="${it58070053_webp}">
-                                SELECT DISTINCT User.User_ID, r.User_ID , Order_ID, Order_date, Order_Status, Total_Price, getRefund, Service_Charge, Concert_ID, Concert_Name
+                                SELECT DISTINCT User.User_ID, r.User_ID , Order_ID, Order_datetime, Order_Status, Total_Price, getRefund, Service_Charge, Concert_ID, Concert_Name
                                 FROM User JOIN 
                                 Reservation r USING (User_ID)
                                 JOIN Ticket USING (Order_ID)
@@ -232,7 +232,7 @@
                                             <tr align="center">
                                                 <td><c:out value="${row2.Order_ID}"/></td> 
                                                 <td><c:out value="${row2.User_ID}"/></td>
-                                                <td><c:out value="${row2.Order_date}"/></td>
+                                                <td><c:out value="${row2.Order_datetime}"/></td>
                                                 <td class="btn btn-success col-md-2"><c:out value="${row2.Order_Status}"/></td>
                                                 <td><c:out value="${row2.Total_Price}"/></td>
                                                 <td><c:out value="${row2.Concert_Name}"/></td>

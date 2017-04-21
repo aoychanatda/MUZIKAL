@@ -1,25 +1,36 @@
 <%-- 
     Document   : HowtoSignUp
-    Created on : Apr 20, 2017, 2:10:22 PM
-    Author     : admin
+    Created on : Apr 20, 2017, 10:10:48 PM
+    Author     : lenovo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+<html lang="en" class="no-js"> 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>How to Sign Up Organize</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/modernizr.custom.js"></script>
+
+
     </head>
     <body class="colorful3">   
             
             <!-- Start Check NavBar -->  
             <% String checkRoleS = (String)session.getAttribute("checkRoleS"); %>
+            <%= session.getAttribute("checkRoleS") %><br>
             <% if(checkRoleS == null) { %>
                 <jsp:include page="navbarguest.jsp"/>
-                
+               <!-- <% out.println("in guestNull"); %>-->
                 
             <% } else if(checkRoleS.equals("MEM")) { %>
             <nav class="navbar navbar-custom navbar-fixed-top">
@@ -45,15 +56,15 @@
                             </button>
 
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
-                                <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
-                                <li><a href="ArticalMem.jsp" style="color:white;">My Artical</a></li>
-                                <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
+                                <li><a href="ProfileMember.jsp" style="color:white;">My Profile</a></li>
+                                <li><a href="MyTicket.jsp" style="color:white;">My Ticket</a></li>
+                                <li><a href="index.jsp" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
                     </ul>
                 </div>
             </nav><br>                
-                
+                <% out.println("in mem"); %>
             <% } else if(checkRoleS.equals("ORG")) { %>
             <nav class="navbar navbar-custom navbar-fixed-top">
                 <div class="container-fluid">
@@ -78,15 +89,15 @@
                             </button>
 
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
-                                <li><a href="ProfileOrg.html" style="color:white;">My Profile</a></li>
-                                <li><a href="AllDashboard.html" style="color:white;">DashBoard</a></li>
-                                <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
+                                <li><a href="ProfileOrganize.jsp" style="color:white;">My Profile</a></li>
+                                <li><a href="AllDashBoard.jsp" style="color:white;">DashBoard</a></li>
+                                <li><a href="index.jsp" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
                     </ul>
                 </div>
             </nav><br>
-            
+            <% out.println("in org"); %>
             
             <% } else if(checkRoleS.equals("ADM")) { %>
             <nav class="navbar navbar-custom navbar-fixed-top">
@@ -110,77 +121,76 @@
                                 Oliveoil <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
-                                <li><a href="ProfileAd.html" style="color:white;">My Profile</a></li>
-                                <li><a href="Adminpanel.html" style="color:white;">My Artical</a></li>
-                                <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
+                                <li><a href="ProfileAdmin.jsp" style="color:white;">My Profile</a></li>
+                                <li><a href="Adminpanel.jsp" style="color:white;">My Artical</a></li>
+                                <li><a href="index.jsp" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
                     </ul>
                 </div>
             </nav>
-            
+            <% out.println("in org"); %>
             <% } %>
             <!-- End Check Nav Bar -->
             
-            <div class="container" id="buy">
+    <div class="container" id="buy">
                 <div class="row" style="width: 70%; margin: 0 auto">
                     <div class="col-xs-12">        
                         <div class="thumbnail">
-                            <center><h2>วิธีการสมัครสมาชิก Muzikal</h2></center>
+                            <center><h3>วิธีการสมัครเป็น Organize </h3></center>
                             <hr size="10" width="100%">
-                            <p>
-                                เพื่อประโยชน์ในการรับสิทธิ์ประโยชน์จาก Muzikal และ ผู้จัดงานต่างๆ 
-                                รวมถึงความสะดวกในการสั่งซื้อบัตรจาก Muzikal อย่างรวดเร็ว 
-                                เราแนะนำว่าคุณควรสมัครสมาชิกไว้ล่วงหน้าก่อนทำการสั่งซื้อบัตรอีเว้นท์ต่างๆ 
-                                หากคุณไม่ได้ทำการสมัครเป็นสมาชิก Muzikal จะไม่สามารถซื้อบัตรได้ <br>
-                                
-                                สำหรับขั้นตอนการสมัครสมาชิก มีดังนี้<br>
+                            <p>เพื่อความสะดวกในการติดต่อและร้องขอการขายบัตรคอนเสิร์ตของผู้จัดงานต่างๆ
+                                เราแนะนำให้คุณสมัครเป็นOrganizeก่อนหากคุณไม่ได้สมัครเป็นOrganizeไว้ก่อน<br>
+                                คุณจะไม่สามารถส่งคำร้องขอการขายบัตรคอนเสิร์ตให้กับทางเราได้<br></p>
+                            <center>ใส่รูป</center><br><br>  
+                            <center><h3>การเปลี่ยนแปลงข้อมูลส่วนตัว</h3></center>
+                            <hr size="10" width="100%">
+                            สำหรับขั้นตอนการสมัครเป็น Organize มีดังนี้<br>
                                 1. เข้าไปที่เว็บไซต์และคลิกที่ปุ่ม ‘Sign Up’ ตรงมุมขวาบนของหน้าจอ
-                                <center>ใส่รูปเหวย!!!!!</center><br><br>
-                                2. ทำการเลือกว่าจะสมัครเป็นสมาชิกหรือเป็นผู้จัดคอนเสิร์ต ในกรณีถ้าสมัครเป็นผู้จัดคอนเสิร์ตจะไม่สามารถ
+                                <center>ใส่รูป!!!!!</center><br><br>
+                                2. ทำการเลือกว่าจะสมัครเป็นผู้จัดคอนเสิร์ต ในกรณีถ้าสมัครเป็นผู้จัดคอนเสิร์ตจะไม่สามารถ
                                 กดซื้อบัตรคอนเสิร์ตได้
-                                <center>ใส่รูปเหวย!!!!!</center><br><br>
-                                3. หลังจากกรอกข้อมูลและตรวจสอบความถูกต้องเรียบร้อยแล้ว ก็ทำการกดปุ่ม Confirm
+                                <center>ใส่รูป!!!!!</center><br><br>
+                                3. หลังจากกรอกข้อมูลและตรวจสอบความถูกต้องูลเรียบร้อยแล้ว ก็ทำการกดปุ่ม Confirm
                                 เพื่อทำการยืนยันการสมัครสมาชิก
-                                <center>ใส่รูปเหวย!!!!!</center><br><br>
-                                
-                            </p>
+                                <center>ใส่รูป!!!!!</center><br><br>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            
-<!-- Footer -->
-      <footer style="background-color:rgba(255,255,255,0.1);">
-        <div class="row">
-         <div class="container ">
-         <div class="col-lg-3 col-md-6" style="padding: 85px 0; text-align:center;">
-            <a href="What.html" style="text-decoration: none"><h3><font color="white">What is Muzikal</font></h3></a>
-         </div>
-         <div class="col-lg-4 col-md-6"></div>
-         <div class="col-lg-3 col-md-6">
-            <h3><font color="white">Contact</font></h3>
-            <p>Jirpinya Onsang<br>
-            Tel: xxxxxxxx<br>
-            Email: xxx@xxx.com</p>
-            <p><a href="" title="Contact me!"><i class="fa fa-envelope"></i>Facebook</a></p>
-            <h3><font color="white">Follow</font></h3>
-            <a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
-            </span>
-            Twitter</a>
-            <a href=""  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
-            </span>
-            GitHub</a><br><br>
-         </div>
-      </footer>
-<!-- End-->
+    <!-- End what is muzikal-->
 
-<!-- End product-->
-    <!-- jQuery (necessary for Bootstrap's JavaScriptplugins)-->
+    <!-- Footer -->
+    <footer style="background-color: rgba(0,0,0,0.6);">
+        <div class="container ">
+            <div class="col-lg-3 col-md-6" style="padding: 85px 0; text-align:center;">
+                <a href="What.html" style="text-decoration: none"><h3><font color="white">What is Muzikal</font></h3></a>
+            </div>
+            <div class="col-lg-4 col-md-6"></div>
+            <div class="col-lg-3 col-md-6">
+                <h3><font color="white">Contact</font></h3>
+                <p>Jirpinya Onsang<br>
+                    Tel: xxxxxxxx<br>
+                    Email: xxx@xxx.com</p>
+                <p><a href="" title="Contact me!"><i class="fa fa-envelope"></i>Facebook</a></p>
+                <h3><font color="white">Follow</font></h3>
+                <a href="" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
+                    </span>
+                    Twitter</a>
+                <a href=""  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
+                    </span>
+                    GitHub</a><br><br>
+            </div>
+    </footer>
+    <!--End footer -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-3.1.1.min.js"></script>
-    <!-- Include all compiled plugins(below), or include individual files as needed -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/scrolling-nav.js"></script>
-  </body>
+    <script src="js/toucheffects.js"></script>
+    <!-- hide scrollbar -->
+
+</body>
 </html>

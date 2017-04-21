@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <html lang="en">
 
     <head>
@@ -44,6 +47,8 @@
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <!--NAV BAR -->
                 <body class="colorful3">
+                    <% String Login_ID = (String) session.getAttribute("Login_ID");%>
+                    <%= session.getAttribute("Login_ID")%><br>
                     <!-- Navigation bar-->
                     <nav class="navbar navbar-custom navbar-fixed-top">
                         <div class="container-fluid">
@@ -68,9 +73,9 @@
                                     </button>
 
                                     <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
-                                        <li><a href="ProfileOrg.html" style="color:white;">My Profile</a></li>
-                                        <li><a href="AllDashboard.html" style="color:white;">DashBoard</a></li>
-                                        <li><a href="index.html" style="color:white;">Sign out</a></li>
+                                        <li><a href="ProfileOrganize.jsp" style="color:white;">My Profile</a></li>
+                                        <li><a href="AllDashBoard.jsp" style="color:white;">DashBoard</a></li>
+                                        <li><a href="index.jsp" style="color:white;">Sign out</a></li>
                                     </ul>
                                 </div>
                             </ul>
@@ -85,14 +90,14 @@
                             <li class="active">
                                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
                                 <ul id="demo" class="collapse">
-                                    <li><a href="AllDashboard.html">Dashboard Overview</a></li>
-                                    <li><a href="Dashboard concert.html">Concert1</a></li>
-                                    <li><a href="Dashboard concert.html">Concert2</a></li>
+                                    <li><a href="AllDashBoard.jsp">Dashboard Overview</a></li>
+                                    <li><a href="DashBoardConcert.jsp">DashBoard Concert</a></li>
+                                    
                                 </ul>
                             </li>
 
                             <!--Forms-->
-                            <li><a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a></li>
+                            <li><a href="forms.jsp"><i class="fa fa-fw fa-edit"></i> Forms</a></li>
 
                         </ul>
                     </div>
@@ -114,7 +119,7 @@
                             </h1>
                             <ol class="breadcrumb">
                                 <li>
-                                    <i class="fa fa-dashboard"></i>  <a href="AllDashboard.html">Dashboard Overview</a>
+                                    <i class="fa fa-dashboard"></i>  <a href="AllDashBoard.jsp">Dashboard Overview</a>
                                 </li>
                                 <li class="active">
                                     <i class="fa fa-edit"></i> Concert Request Form

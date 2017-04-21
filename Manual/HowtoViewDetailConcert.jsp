@@ -28,7 +28,7 @@
             
             <!-- Start Check NavBar -->  
             <% String checkRoleS = (String)session.getAttribute("checkRoleS"); %>
-            <%= session.getAttribute("checkRoleS") %><br>
+           
             <% if(checkRoleS == null) { %>
                 <jsp:include page="navbarguest.jsp"/>
                

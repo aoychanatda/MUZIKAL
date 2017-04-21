@@ -25,7 +25,7 @@
             <%= session.getAttribute("checkRoleS") %><br>
             <% if(checkRoleS == null) { %>
                 <jsp:include page="navbarguest.jsp"/>
-               <!-- <% out.println("in guestNull"); %>-->
+               
                 
             <% } else if(checkRoleS.equals("MEM")) { %>
             <nav class="navbar navbar-custom navbar-fixed-top">
@@ -36,12 +36,7 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                        <form action="" class="navbar-nav search-form" style="margin:10px;">
-                            <div class="navbar-nav form-group has-feedback">
-                                <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                                <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </form>
+                        
                         <!--Start Button dropdown after sign in -->
                         <div class="btn-group navbar-nav navbar-btn">
 
@@ -69,12 +64,7 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                        <form action="" class="navbar-nav search-form" style="margin:10px;">
-                            <div class="navbar-nav form-group has-feedback">
-                                <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                                <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </form>
+                        
                         <!--Start Button dropdown after sign in -->
                         <div class="btn-group navbar-nav navbar-btn">
 
@@ -92,7 +82,7 @@
                     </ul>
                 </div>
             </nav><br>
-            <% out.println("in org"); %>
+            
             
             <% } else if(checkRoleS.equals("ADM")) { %>
             <nav class="navbar navbar-custom navbar-fixed-top">
@@ -124,7 +114,7 @@
                     </ul>
                 </div>
             </nav>
-            <% out.println("in org"); %>
+            
             <% } %>
             <!-- End Check Nav Bar -->
             

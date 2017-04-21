@@ -19,7 +19,7 @@
             <% String checkRoleS = (String)session.getAttribute("checkRoleS"); %>
             <% if(checkRoleS == null) { %>
                 <jsp:include page="navbarguest.jsp"/>
-                <% out.println("in guestNull"); %>
+                
                 
             <% } else if(checkRoleS.equals("MEM")) { %>
             <nav class="navbar navbar-custom navbar-fixed-top">
@@ -30,12 +30,7 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                        <form action="" class="navbar-nav search-form" style="margin:10px;">
-                            <div class="navbar-nav form-group has-feedback">
-                                <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                                <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </form>
+                        
                         <!--Start Button dropdown after sign in -->
                         <div class="btn-group navbar-nav navbar-btn">
 
@@ -46,7 +41,7 @@
 
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                                 <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
-                                <li><a href="ArticalMem.jsp" style="color:white;">My Artical</a></li>
+                                <li><a href="MyTicket.jsp" style="color:white;">My Ticket</a></li>
                                 <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>
@@ -63,12 +58,7 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                        <form action="" class="navbar-nav search-form" style="margin:10px;">
-                            <div class="navbar-nav form-group has-feedback">
-                                <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                                <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </form>
+                        
                         <!--Start Button dropdown after sign in -->
                         <div class="btn-group navbar-nav navbar-btn">
 
@@ -97,12 +87,7 @@
                         </a>
                     </div>
                     <ul class="nav navbar-nav navbar-right" style="padding-right:10px;">
-                        <form action="" class="navbar-nav search-form" style="margin:10px;">
-                            <div class="navbar-nav form-group has-feedback">
-                                <input type="text" autocomplete="off"class="form-control" name="search" id="search" placeholder="Search your concert...">
-                                <span style="color:white" class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </form>
+                       
                         <!--Start Button dropdown after sign in -->
                         <div class="btn-group navbar-nav navbar-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; color:white;">

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Manual
-    Created on : Apr 20, 2017, 2:51:25 PM
-    Author     : test
+    Created on : Apr 21, 2017, 5:38:27 PM
+    Author     : admin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -42,7 +42,7 @@
 
                         <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                             <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
-                            <li><a href="ArticalMem.jsp" style="color:white;">My Ticket</a></li>
+                            <li><a href="MyTicket.jsp" style="color:white;">My Ticket</a></li>
                             <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                         </ul>
                     </div>
@@ -145,9 +145,9 @@
                             <hr>
                             <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignUpOrg.jsp">วิธีสมัครเป็น Organizer</a><br>
                             <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSignInOutOrg.jsp">วิธีเข้าสู่ระบบ/ออกจากระบบ</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีการส่งข้อมูลคอนเสิร์ต</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">ข้อมูลดูยอดขายของคอนเสิร์ตอย่างไร</a><br>
-                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="#">วิธีการดูข้อมูลคอนเสิร์ต</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoSentRequest.jsp">วิธีการส่งข้อมูลคอนเสิร์ต</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoViewDetailConcert.jsp">ข้อมูลดูยอดขายของคอนเสิร์ตอย่างไร</a><br>
+                            <span class="glyphicon glyphicon-chevron-right"></span> <a href="Howto_DashBoardConcert.jsp">วิธีการดูข้อมูลคอนเสิร์ต</a><br>
                             <span class="glyphicon glyphicon-chevron-right"></span> <a href="HowtoEditOrg.jsp">จัดการบัญชีข้อมูลส่วนตัว</a></div>
                         <div class="cd" id="admin">
                             <h3><b><span class="glyphicon glyphicon-question-sign"></span> FAQ ADMIN</b></h3>

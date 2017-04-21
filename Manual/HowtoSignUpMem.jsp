@@ -41,7 +41,7 @@
 
                             <ul class="dropdown-menu" style="background-color:black; color:white; border-radius:10px;">
                                 <li><a href="ProfileMem.jsp" style="color:white;">My Profile</a></li>
-                                <li><a href="ArticalMem.jsp" style="color:white;">My Artical</a></li>
+                                <li><a href="MyTicket.jsp" style="color:white;">My Ticket</a></li>
                                 <li><a href="SignOutServlet" style="color:white;">Sign out</a></li>
                             </ul>
                         </div>

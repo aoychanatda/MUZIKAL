@@ -80,22 +80,33 @@
                        user="it58070053_webp" password="utKavVnZ79"/>
 
     <sql:query var = "concert" dataSource="${it58070053_webp}">    
-        select  Distinct r.Order_ID, c.Concert_Name, r.Order_Status, r.Total_Price, u.Fname, u.Lname, p.Payment_method, 
-        r.Order_date, z.Zone_Name, t.Price_of_Ticket, s.Date, c.Start_Time, l.Location_Name, r.Service_charge, u.Email, r.getRefund
-        FROM Reservation r, User u, Payment p, Ticket t, Zone z, Showtime s, Concert c, Location l
-        WHERE (r.User_ID = u.User_ID) AND (p.Order_ID = r.Order_ID) AND (r.Order_ID = t.Order_ID)
-        AND (z.Zone_ID = t.Zone_ID) AND (s.Showtime_ID = z.Showtime_ID) AND (s.Concert_ID = c.Concert_ID) AND (c.Location_ID = l.Location_ID)
-        AND u.User_ID = ?;
+        Select Distinct r.Order_ID, c.Concert_Name, r.Order_Status, r.Total_Price, u.Fname, u.Lname, p.Payment_method, 
+        r.Order_datetime, z.Zone_Name, t.Price_of_Ticket, s.Date, c.Start_Time, l.Location_Name, r.Service_charge, u.Email, r.getRefund
+        FROM User u
+        JOIN Reservation r USING (User_ID)
+        JOIN Payment p USING (Order_ID)
+        JOIN Ticket t USING (Order_ID)
+        JOIN Zone z USING (Zone_ID)
+        JOIN Showtime s USING (Showtime_ID)
+        JOIN Concert c USING (Concert_ID)
+        JOIN Location l USING (Location_ID)
+        WHERE u.User_ID = ?;
         <sql:param value="${User_ID}"/>
     </sql:query>
     
         
     <sql:query var="refund" dataSource="${it58070053_webp}">
-        Select c.Concert_Name, s.Date, c.Start_Time, l.Location_Name, z.Zone_Name, t.Price_of_Ticket, r.Total_Price, r.Service_charge, r.Order_ID
-        From Reservation r, User u, Payment p, Ticket t, Zone z, Showtime s, Concert c, Location l
-        Where (r.User_ID = u.User_ID) AND (p.Order_ID = r.Order_ID) AND (r.Order_ID = t.Order_ID)
-        AND (z.Zone_ID = t.Zone_ID) AND (s.Showtime_ID = z.Showtime_ID) AND (s.Concert_ID = c.Concert_ID) AND (c.Location_ID = l.Location_ID)
-        AND r.getRefund = 'YES' AND u.User_ID = ?;
+        Select c.Concert_Name, s.Date, c.Start_Time, l.Location_Name, z.Zone_Name, 
+        t.Price_of_Ticket, r.Total_Price, r.Service_charge, r.Order_ID
+        FROM User u
+        JOIN Reservation r USING (User_ID)
+        JOIN Ticket t USING (Order_ID)
+        JOIN Zone z USING (Zone_ID)
+        JOIN Showtime s USING (Showtime_ID)
+        JOIN Concert c USING (Concert_ID)
+        JOIN Location l USING (Location_ID)
+        Where r.getRefund = 'YES'
+        AND u.User_ID = ?;
         <sql:param value="${User_ID}"/>
     </sql:query>
    

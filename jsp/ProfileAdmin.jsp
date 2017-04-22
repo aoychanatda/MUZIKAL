@@ -73,49 +73,94 @@
             <sql:param value="${Login_ID}"/>
         </sql:query>
         <!-- Start product-->
-        <div class="container">
-            <div class="row" style="width: 80%; margin: 0 auto">
-                <div><center><H1><font color="white">MY PROFILE</font></H1></center></div><br>
-                <div class="col-xs-12 col-sm-6 col-md-4">        
-                    <div class="thumbnail">
-                        <img src="img/test4.JPG" class="img-circle">
+        <form class="form-horizontal" action="SaveProfileServlet" enctype="multipart/form-data" method="POST">
+            <c:forEach var="row" items="${user.rows}">
+                <div class="container">
+                    <div class="row" style="width: 80%; margin: 0 auto">
+                        <div><center><H1><font color="white">MY PROFILE</font></H1></center></div><br>
+                        <div class="col-xs-12 col-sm-6 col-md-4">        
+                            <div class="thumbnail">
 
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <c:forEach var="row" items="${user.rows}">
-                    <form class="form-horizontal" action="SaveProfileServlet">
-                        <br>
-                        <br>
-                        <div class="form-group">
-                            <label for="lname" class="col-sm-2 control-label"><font color="white">ชื่อ</font></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" name="Fname" value="${row.Fname}" placeholder="firstname">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname" class="col-sm-2 control-label"><font color="white">นามสกุล</font></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="lastname" name="Lname" value="${row.Lname}" placeholder="lastname">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname" class="col-sm-2 control-label"><font color="white">E-mail</font></label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="email" name="Email" value="${row.Email}" placeholder="email">
-                            </div>
-                        </div>
+                                <div id="userphoto">
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10"><center>
-                                    <button type="submit" name="save" value="Admin" class="btn btn-danger">Save</button></center>
-                            </div>
+                                    <!--INSERT PICTURE-->
+                                    <div id="userphoto">
+                                        <div class="gravatar-wrapper-128"><img id="image" src="${row.Profile_img}" alt="" class="img-circle" width="260" height="250"></div>
+                                        <div class="change-picture-slide" style="top: 30px;">
+                                            <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                            <a href="" onclick="changePicture(); return false"><center><input class="btn btn-primary btn-block" type="button" value="Change Picture" /></center></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    function changePicture() {
+                                        //open the open file dialog
+                                        document.getElementById('upload').click();
+                                        var link = document.getElementById('upload').url;
+                                        //change picture
+                                        var img = document.getElementById("image");
+                                        img.src = link;
+                                    }
+                                </script>
+
+                                <script>
+                                    function changePicture() {
+                                        $('#upload').click();
+                                    }
+                                    function readURL(input)
+                                    {
+                                        if (input.files && input.files[0])
+                                        {
+                                            var reader = new FileReader();
+                                            reader.onload = function (e)
+                                            {
+                                                $('#image')
+                                                        .attr('src', e.target.result);
+
+                                            };
+                                            reader.readAsDataURL(input.files[0]);
+                                        }
+                                    }
+                                </script>
+                                </div>
                         </div>
-                    </form>
+                                <!--End INSERT PICTURE-->
+                                <!---------------------------->
+                                <div class="col-xs-12 col-sm-6 col-md-8">
+                                    <c:forEach var="row" items="${user.rows}">
+                                        <form class="form-horizontal" action="SaveProfileServlet">
+                                            <br>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="lname" class="col-sm-2 control-label"><font color="white">ชื่อ</font></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="name" name="Fname" value="${row.Fname}" placeholder="firstname">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lname" class="col-sm-2 control-label"><font color="white">นามสกุล</font></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="lastname" name="Lname" value="${row.Lname}" placeholder="lastname">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lname" class="col-sm-2 control-label"><font color="white">E-mail</font></label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="email" name="Email" value="${row.Email}" placeholder="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10"><center>
+                                                        <button type="submit" name="save" value="Admin" class="btn btn-danger">Save</button></center>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </c:forEach>
+                                </div>
+                            </div>        
+                        </div>
                     </c:forEach>
-                </div>
-            </div>        
-        </div>
         <!-- End product -->
 
 

@@ -22,6 +22,8 @@ import javax.servlet.http.HttpSession;
 import model.ContactPerson;
 import model.Member;
 import model.User;
+import javax.servlet.http.Part;
+import java.io.File;
 
 /**
  *
@@ -46,21 +48,34 @@ public class SaveProfileServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             try {
 
+               String savePath = "C:\\Users\\lenovo\\Desktop\\Projecttest\\web\\img";
                 String strButton = request.getParameter("save");
+
                 String strFName = request.getParameter("Fname");
                 String strLName = request.getParameter("Lname");
                 String strEmail = request.getParameter("Email");
+                String strPhoneNum = request.getParameter("Phone_Number");
                 String strPhonenum = request.getParameter("Phone_number");
                 String strBDate = request.getParameter("Birth_Date");
                 String strAddress = request.getParameter("Address");
                 String strIDcard = request.getParameter("IDcard");
                 String strGen = request.getParameter("Gender");
-
+                String strProfileimg = request.getParameter("Profile_img");
                  HttpSession session = request.getSession(true);
                  String LoginID = (String) session.getAttribute("Login_ID");
-                 
+                
+                Part UserPic = request.getPart("upload");
+                File fileSaveDir = new File(savePath);
+                if (!fileSaveDir.exists()) {
+                    fileSaveDir.mkdir();
+                }
+
+                String profilepic = extractFileName(UserPic);
+                UserPic.write(savePath + File.separator + profilepic);
+                profilepic = "img/" + profilepic;
+
                  User user = new User();
-                 user.UpdateUser(strFName, strLName, strEmail, LoginID);
+                 user.UpdateUser(strFName, strLName, strEmail, LoginID, strProfileimg);
 
                 if (strButton.equals("Member")) {
                     Member member = new Member();
